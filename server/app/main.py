@@ -1,0 +1,15 @@
+from fastapi import FastAPI
+from .routes import router
+
+app = FastAPI(title="TrueFrame AI - Deepfake Detection API")
+
+# Include modular routes
+app.include_router(router)
+
+@app.get("/")
+def read_root():
+    return {"message": "TrueFrame AI API is online. Use /predict for inference."}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
