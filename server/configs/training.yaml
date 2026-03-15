@@ -1,0 +1,17 @@
+project:
+  name: "TrueFrame AI"
+  base_dir: ".."
+
+data:
+  dataset_path: "data"
+  model_save_path: "models/deepfake_model.pth"
+  log_path: "logs/training_log.txt"
+
+training:
+  batch_size: 32
+  epochs: 8
+  learning_rate: 0.001
+  train_split: 0.8
+
+preprocessing:
+  img_size: [224, 224]
