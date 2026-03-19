@@ -1,0 +1,1249 @@
+
+--- Training Session Started: C:\Users\hp\Documents\GitHub\trueframe-ai\server\logs\training_log.txt ---
+Starting training on 2041 images for 8 epochs...
+Epoch 1/8, Loss: 0.7753
+Epoch 2/8, Loss: 0.6201
+Epoch 3/8, Loss: 0.5534
+Epoch 4/8, Loss: 0.5055
+Epoch 5/8, Loss: 0.4393
+Epoch 6/8, Loss: 0.3458
+Epoch 7/8, Loss: 0.2658
+Epoch 8/8, Loss: 0.2117
+
+Final Evaluation Metrics:
+Accuracy: 57.46%
+F1 Score: 0.5152
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        fake       0.83      0.23      0.36       214
+        real       0.53      0.95      0.68       195
+
+    accuracy                           0.57       409
+   macro avg       0.68      0.59      0.52       409
+weighted avg       0.69      0.57      0.52       409
+
+
+Model saved to C:\Users\hp\Documents\GitHub\trueframe-ai\server\models\deepfake_model.pth
+--- Training Session Finished ---
+
+
+--- Training Session Started (Large Dataset) ---
+Sampled Training: 20000 images
+Validation: 39428 images
+Test: 10905 images
+Epochs: 15
+
+--- Training Session Started (Large Dataset) ---
+Sampled Training: 20000 images
+Validation: 4000 images
+Test: 4000 images
+Epochs: 15
+Epoch 1/15, Loss: 0.1711, Val Acc: 91.53%
+
+--- Training Session Started (Large Dataset) ---
+Sampled Training: 20000 images
+Validation: 4000 images
+Test: 4000 images
+Epochs: 15
+  Batch 50/625, Loss: 0.1483
+  Batch 100/625, Loss: 0.1570
+  Batch 150/625, Loss: 0.1716
+  Batch 200/625, Loss: 0.0892
+Epoch 2/15, Loss: 0.0987, Val Acc: 95.15%
+
+--- Training Session Started (Large Dataset) ---
+Sampled Training: 20000 images
+Validation: 4000 images
+Test: 4000 images
+Epochs: 15
+
+--- Training Session Started (Large Dataset) ---
+Sampled Training: 20000 images
+Validation: 4000 images
+Test: 4000 images
+Epochs: 15
+
+--- Training Session Started (Large Dataset) ---
+Sampled Training: 20000 images
+Validation: 4000 images
+Test: 4000 images
+Epochs: 15
+
+--- Training Session Started (Large Dataset) ---
+Sampled Training: 20000 images
+Validation: 4000 images
+Test: 4000 images
+Epochs: 15
+
+--- Training Session Started (Large Dataset) ---
+Using device: cpu
+Sampled Training: 20000 images
+Validation: 4000 images
+Test: 4000 images
+Epochs: 15
+  Batch 50/2500, Loss: 1.0329
+
+--- Training Session Started (Large Dataset) ---
+Using device: cpu
+Sampled Training: 20000 images
+Validation: 4000 images
+Test: 4000 images
+Epochs: 15
+
+--- Training Session Started (Large Dataset) ---
+Sampled Training: 20000 images
+Validation: 4000 images
+Test: 4000 images
+Epochs: 15
+  Batch 50/2500, Loss: 0.3652
+  Batch 100/2500, Loss: 0.8266
+  Batch 150/2500, Loss: 0.5803
+  Batch 200/2500, Loss: 0.7775
+  Batch 250/2500, Loss: 0.2013
+  Batch 300/2500, Loss: 0.2457
+  Batch 350/2500, Loss: 0.3552
+  Batch 400/2500, Loss: 0.1480
+  Batch 450/2500, Loss: 0.1167
+  Batch 500/2500, Loss: 0.7525
+  Batch 550/2500, Loss: 0.3777
+  Batch 600/2500, Loss: 0.2998
+  Batch 650/2500, Loss: 0.2774
+  Batch 700/2500, Loss: 0.2467
+  Batch 750/2500, Loss: 0.1648
+  Batch 800/2500, Loss: 0.0864
+  Batch 850/2500, Loss: 0.5349
+  Batch 900/2500, Loss: 0.3928
+  Batch 950/2500, Loss: 1.0191
+  Batch 1000/2500, Loss: 0.0655
+  Batch 1050/2500, Loss: 0.4653
+  Batch 1100/2500, Loss: 0.0602
+  Batch 1150/2500, Loss: 0.2641
+  Batch 1200/2500, Loss: 0.3924
+  Batch 1250/2500, Loss: 0.2798
+  Batch 1300/2500, Loss: 0.1121
+  Batch 1350/2500, Loss: 0.0841
+  Batch 1400/2500, Loss: 0.1902
+  Batch 1450/2500, Loss: 0.1847
+  Batch 1500/2500, Loss: 0.1228
+  Batch 1550/2500, Loss: 0.1871
+  Batch 1600/2500, Loss: 0.0971
+  Batch 1650/2500, Loss: 0.0859
+  Batch 1700/2500, Loss: 0.6016
+  Batch 1750/2500, Loss: 0.2469
+  Batch 1800/2500, Loss: 0.3139
+  Batch 1850/2500, Loss: 0.3843
+  Batch 1900/2500, Loss: 0.0326
+  Batch 1950/2500, Loss: 0.2515
+  Batch 2000/2500, Loss: 0.3297
+  Batch 2050/2500, Loss: 0.3040
+  Batch 2100/2500, Loss: 0.2130
+  Batch 2150/2500, Loss: 0.0538
+  Batch 2200/2500, Loss: 0.2646
+  Batch 2250/2500, Loss: 0.0521
+  Batch 2300/2500, Loss: 0.0254
+  Batch 2350/2500, Loss: 0.1714
+  Batch 2400/2500, Loss: 0.0772
+  Batch 2450/2500, Loss: 0.0501
+  Batch 2500/2500, Loss: 0.3377
+Epoch 1/15, Loss: 0.3407, Val Acc: 88.55%, Time: 6973.95s
+  Batch 50/2500, Loss: 0.1149
+  Batch 100/2500, Loss: 0.5665
+  Batch 150/2500, Loss: 0.1469
+  Batch 200/2500, Loss: 0.6237
+  Batch 250/2500, Loss: 0.1447
+  Batch 300/2500, Loss: 0.8414
+  Batch 350/2500, Loss: 0.3263
+  Batch 400/2500, Loss: 0.1631
+  Batch 450/2500, Loss: 0.3751
+  Batch 500/2500, Loss: 0.4274
+  Batch 550/2500, Loss: 0.0406
+  Batch 600/2500, Loss: 0.0162
+  Batch 650/2500, Loss: 0.0700
+  Batch 700/2500, Loss: 0.2884
+  Batch 750/2500, Loss: 0.0811
+  Batch 800/2500, Loss: 0.0514
+  Batch 850/2500, Loss: 0.2290
+  Batch 900/2500, Loss: 0.1823
+  Batch 950/2500, Loss: 0.0772
+  Batch 1000/2500, Loss: 0.1815
+  Batch 1050/2500, Loss: 0.1109
+  Batch 1100/2500, Loss: 0.2102
+  Batch 1150/2500, Loss: 0.4410
+  Batch 1200/2500, Loss: 0.1977
+  Batch 1250/2500, Loss: 0.3214
+  Batch 1300/2500, Loss: 1.1616
+  Batch 1350/2500, Loss: 0.1066
+  Batch 1400/2500, Loss: 0.1449
+  Batch 1450/2500, Loss: 0.0241
+  Batch 1500/2500, Loss: 0.1631
+  Batch 1550/2500, Loss: 0.1914
+  Batch 1600/2500, Loss: 0.0252
+  Batch 1650/2500, Loss: 0.3040
+  Batch 1700/2500, Loss: 0.7818
+  Batch 1750/2500, Loss: 0.0697
+  Batch 1800/2500, Loss: 0.0883
+  Batch 1850/2500, Loss: 0.1453
+  Batch 1900/2500, Loss: 0.2252
+  Batch 1950/2500, Loss: 0.1038
+  Batch 2000/2500, Loss: 0.3454
+  Batch 2050/2500, Loss: 0.3900
+  Batch 2100/2500, Loss: 0.1419
+  Batch 2150/2500, Loss: 0.0231
+  Batch 2200/2500, Loss: 0.0859
+  Batch 2250/2500, Loss: 0.0480
+  Batch 2300/2500, Loss: 0.2528
+  Batch 2350/2500, Loss: 0.1053
+  Batch 2400/2500, Loss: 0.0170
+  Batch 2450/2500, Loss: 0.2908
+  Batch 2500/2500, Loss: 0.1343
+Epoch 2/15, Loss: 0.2069, Val Acc: 90.60%, Time: 14628.29s
+  Batch 50/2500, Loss: 0.0386
+  Batch 100/2500, Loss: 0.1082
+  Batch 150/2500, Loss: 0.0271
+  Batch 200/2500, Loss: 0.2958
+  Batch 250/2500, Loss: 0.2889
+  Batch 300/2500, Loss: 0.2081
+  Batch 350/2500, Loss: 0.1993
+  Batch 400/2500, Loss: 0.0957
+  Batch 450/2500, Loss: 0.2869
+  Batch 500/2500, Loss: 0.1376
+  Batch 550/2500, Loss: 0.1077
+  Batch 600/2500, Loss: 0.1648
+  Batch 650/2500, Loss: 0.2896
+  Batch 700/2500, Loss: 0.0180
+  Batch 750/2500, Loss: 0.0686
+  Batch 800/2500, Loss: 0.0364
+  Batch 850/2500, Loss: 0.0987
+  Batch 900/2500, Loss: 0.3001
+  Batch 950/2500, Loss: 0.0600
+  Batch 1000/2500, Loss: 0.0685
+  Batch 1050/2500, Loss: 0.1146
+  Batch 1100/2500, Loss: 0.0201
+  Batch 1150/2500, Loss: 0.1740
+  Batch 1200/2500, Loss: 0.0368
+  Batch 1250/2500, Loss: 0.0209
+  Batch 1300/2500, Loss: 0.3647
+  Batch 1350/2500, Loss: 0.9384
+  Batch 1400/2500, Loss: 0.0939
+  Batch 1450/2500, Loss: 0.0172
+  Batch 1500/2500, Loss: 0.1929
+  Batch 1550/2500, Loss: 0.0282
+  Batch 1600/2500, Loss: 0.0480
+  Batch 1650/2500, Loss: 0.0154
+  Batch 1700/2500, Loss: 0.2398
+  Batch 1750/2500, Loss: 0.0614
+  Batch 1800/2500, Loss: 0.2473
+  Batch 1850/2500, Loss: 0.1211
+  Batch 1900/2500, Loss: 0.2642
+  Batch 1950/2500, Loss: 0.3970
+  Batch 2000/2500, Loss: 0.2216
+  Batch 2050/2500, Loss: 0.2302
+  Batch 2100/2500, Loss: 0.0936
+  Batch 2150/2500, Loss: 0.1422
+  Batch 2200/2500, Loss: 0.1292
+  Batch 2250/2500, Loss: 0.0276
+  Batch 2300/2500, Loss: 0.4598
+  Batch 2350/2500, Loss: 0.0678
+  Batch 2400/2500, Loss: 0.0730
+  Batch 2450/2500, Loss: 0.0634
+  Batch 2500/2500, Loss: 0.0548
+Epoch 3/15, Loss: 0.1616, Val Acc: 94.25%, Time: 52171.65s
+  Batch 50/2500, Loss: 0.0999
+  Batch 100/2500, Loss: 0.0228
+  Batch 150/2500, Loss: 0.1280
+  Batch 200/2500, Loss: 0.1836
+
+--- Training Session Started (Large Dataset) ---
+Sampled Training: 20000 images
+Validation: 4000 images
+Test: 4000 images
+Epochs: 15
+
+Epoch 1 is starting training...
+  Batch 250/2500, Loss: 0.3197
+  Batch 300/2500, Loss: 0.2584
+  Batch 350/2500, Loss: 0.2132
+  Train Batch 50/2500, Loss: 1.0680
+  Batch 400/2500, Loss: 0.1331
+
+Epoch 1 is starting training...
+  Train Batch 100/2500, Loss: 0.7792
+  Train Batch 150/2500, Loss: 0.5690
+  Train Batch 200/2500, Loss: 0.6182
+  Train Batch 250/2500, Loss: 0.4530
+  Train Batch 300/2500, Loss: 0.8151
+  Train Batch 350/2500, Loss: 0.4712
+  Train Batch 400/2500, Loss: 0.6172
+  Train Batch 450/2500, Loss: 0.2693
+  Train Batch 500/2500, Loss: 0.3321
+  Train Batch 550/2500, Loss: 1.4586
+  Train Batch 600/2500, Loss: 0.4114
+  Train Batch 650/2500, Loss: 0.2571
+  Train Batch 700/2500, Loss: 0.2076
+  Train Batch 750/2500, Loss: 0.1866
+  Train Batch 800/2500, Loss: 0.7281
+  Train Batch 850/2500, Loss: 1.1512
+  Train Batch 900/2500, Loss: 0.4090
+  Train Batch 950/2500, Loss: 0.3766
+  Train Batch 1000/2500, Loss: 0.4556
+  Train Batch 1050/2500, Loss: 0.0558
+  Train Batch 1100/2500, Loss: 0.5844
+  Train Batch 1150/2500, Loss: 0.1588
+  Train Batch 1200/2500, Loss: 0.1046
+  Train Batch 1250/2500, Loss: 0.1716
+  Train Batch 1300/2500, Loss: 0.1320
+  Train Batch 1350/2500, Loss: 0.1249
+  Train Batch 1400/2500, Loss: 0.5172
+  Train Batch 1450/2500, Loss: 0.0621
+  Train Batch 1500/2500, Loss: 0.9111
+  Train Batch 1550/2500, Loss: 0.0584
+  Train Batch 1600/2500, Loss: 0.2528
+  Train Batch 1650/2500, Loss: 0.1492
+  Train Batch 1700/2500, Loss: 0.1073
+  Train Batch 1750/2500, Loss: 0.7190
+  Train Batch 1800/2500, Loss: 0.2215
+  Train Batch 1850/2500, Loss: 0.1708
+  Train Batch 1900/2500, Loss: 0.0883
+  Train Batch 1950/2500, Loss: 0.0353
+  Train Batch 2000/2500, Loss: 0.4381
+  Train Batch 2050/2500, Loss: 0.1246
+  Train Batch 2100/2500, Loss: 0.3099
+  Train Batch 2150/2500, Loss: 0.9167
+  Train Batch 2200/2500, Loss: 0.0975
+  Train Batch 2250/2500, Loss: 0.1285
+  Train Batch 2300/2500, Loss: 0.0883
+  Train Batch 2350/2500, Loss: 0.3256
+  Train Batch 2400/2500, Loss: 0.4419
+  Train Batch 2450/2500, Loss: 0.1187
+  Train Batch 2500/2500, Loss: 0.1788
+Epoch 1 is starting validation...
+Epoch 1 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Train Batch 50/2500, Loss: 0.0739
+  Val Batch 450/500
+  Val Batch 500/500
+
+Epoch 2 is starting training...
+  Train Batch 100/2500, Loss: 0.3774
+  Train Batch 150/2500, Loss: 0.3124
+  Train Batch 200/2500, Loss: 0.2077
+  Train Batch 250/2500, Loss: 0.5765
+  Train Batch 300/2500, Loss: 0.2161
+  Train Batch 350/2500, Loss: 0.0378
+  Train Batch 400/2500, Loss: 0.1220
+  Train Batch 450/2500, Loss: 0.0526
+  Train Batch 500/2500, Loss: 0.2638
+  Train Batch 550/2500, Loss: 0.0466
+  Train Batch 600/2500, Loss: 0.0818
+  Train Batch 650/2500, Loss: 0.2230
+  Train Batch 700/2500, Loss: 0.0324
+  Train Batch 750/2500, Loss: 0.0301
+  Train Batch 800/2500, Loss: 0.0484
+  Train Batch 850/2500, Loss: 0.3653
+  Train Batch 900/2500, Loss: 0.0449
+  Train Batch 950/2500, Loss: 0.0606
+  Train Batch 1000/2500, Loss: 0.1282
+  Train Batch 1050/2500, Loss: 0.3503
+  Train Batch 1100/2500, Loss: 0.0312
+  Train Batch 1150/2500, Loss: 0.0857
+  Train Batch 1200/2500, Loss: 0.1039
+  Train Batch 1250/2500, Loss: 0.5434
+  Train Batch 1300/2500, Loss: 0.0545
+  Train Batch 1350/2500, Loss: 0.3032
+  Train Batch 1400/2500, Loss: 0.3669
+  Train Batch 1450/2500, Loss: 0.0346
+  Train Batch 1500/2500, Loss: 0.0197
+  Train Batch 1550/2500, Loss: 0.2677
+  Train Batch 1600/2500, Loss: 0.3547
+  Train Batch 1650/2500, Loss: 0.1994
+  Train Batch 1700/2500, Loss: 0.0891
+  Train Batch 1750/2500, Loss: 0.0562
+  Train Batch 1800/2500, Loss: 0.2695
+  Train Batch 1850/2500, Loss: 0.2593
+  Train Batch 1900/2500, Loss: 0.0939
+  Train Batch 1950/2500, Loss: 0.0849
+  Train Batch 2000/2500, Loss: 0.1686
+  Train Batch 2050/2500, Loss: 0.2046
+  Train Batch 2100/2500, Loss: 0.0394
+  Train Batch 2150/2500, Loss: 0.1604
+  Train Batch 2200/2500, Loss: 0.0567
+  Train Batch 2250/2500, Loss: 0.0690
+  Train Batch 2300/2500, Loss: 0.0357
+  Train Batch 2350/2500, Loss: 0.1366
+  Train Batch 2400/2500, Loss: 0.0257
+  Train Batch 2450/2500, Loss: 0.3171
+  Train Batch 2500/2500, Loss: 0.0474
+Epoch 2 is starting validation...
+Epoch 2 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 300/500
+  Val Batch 150/500
+  Val Batch 350/500
+  Val Batch 200/500
+  Val Batch 400/500
+  Val Batch 250/500
+  Val Batch 450/500
+  Val Batch 300/500
+  Val Batch 500/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+Epoch 2/15 Finished - Loss: 0.2092, Val Acc: 90.95%, Time: 4964.16s
+
+Epoch 3 is starting training...
+  Train Batch 100/2500, Loss: 0.0703
+  Train Batch 150/2500, Loss: 0.0573
+  Train Batch 200/2500, Loss: 0.0942
+  Train Batch 250/2500, Loss: 0.2139
+  Train Batch 300/2500, Loss: 0.1553
+  Train Batch 350/2500, Loss: 0.1109
+  Train Batch 400/2500, Loss: 0.5160
+  Train Batch 450/2500, Loss: 0.8217
+  Train Batch 500/2500, Loss: 0.0410
+  Train Batch 550/2500, Loss: 0.1229
+  Train Batch 600/2500, Loss: 0.1169
+  Train Batch 650/2500, Loss: 0.4452
+  Train Batch 700/2500, Loss: 0.0579
+  Train Batch 750/2500, Loss: 0.0070
+  Train Batch 800/2500, Loss: 0.4300
+  Train Batch 850/2500, Loss: 0.1962
+  Train Batch 900/2500, Loss: 0.0326
+  Train Batch 950/2500, Loss: 0.1089
+  Train Batch 1000/2500, Loss: 0.0799
+  Train Batch 1050/2500, Loss: 0.1566
+  Train Batch 1100/2500, Loss: 0.0190
+  Train Batch 1150/2500, Loss: 0.0894
+  Train Batch 1200/2500, Loss: 0.2214
+  Train Batch 1250/2500, Loss: 0.1534
+  Train Batch 1300/2500, Loss: 0.0302
+  Train Batch 1350/2500, Loss: 0.1251
+  Train Batch 1400/2500, Loss: 0.0223
+  Train Batch 1450/2500, Loss: 0.3478
+  Train Batch 1500/2500, Loss: 0.0162
+  Train Batch 1550/2500, Loss: 0.0055
+  Train Batch 1600/2500, Loss: 0.0452
+  Train Batch 1650/2500, Loss: 0.1394
+  Train Batch 1700/2500, Loss: 0.1710
+  Train Batch 1750/2500, Loss: 0.0673
+  Train Batch 1800/2500, Loss: 0.1191
+  Train Batch 1850/2500, Loss: 0.0122
+  Train Batch 1900/2500, Loss: 0.0231
+  Train Batch 1950/2500, Loss: 0.0209
+  Train Batch 2000/2500, Loss: 0.1896
+  Train Batch 2050/2500, Loss: 0.7644
+  Train Batch 2100/2500, Loss: 0.1808
+  Train Batch 2150/2500, Loss: 0.0809
+  Train Batch 2200/2500, Loss: 0.0333
+  Train Batch 2250/2500, Loss: 0.4316
+  Train Batch 2300/2500, Loss: 0.0050
+  Train Batch 2350/2500, Loss: 0.1593
+  Train Batch 2400/2500, Loss: 0.0857
+  Train Batch 2450/2500, Loss: 0.6455
+  Train Batch 2500/2500, Loss: 0.0247
+Epoch 3 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 3/15 Finished - Loss: 0.1664, Val Acc: 89.80%, Time: 19206.76s
+
+Epoch 4 is starting training...
+  Train Batch 50/2500, Loss: 0.0070
+  Train Batch 100/2500, Loss: 0.0362
+  Train Batch 150/2500, Loss: 0.0232
+  Train Batch 200/2500, Loss: 0.0311
+  Train Batch 250/2500, Loss: 0.1132
+  Train Batch 300/2500, Loss: 0.0975
+  Train Batch 350/2500, Loss: 0.0427
+  Train Batch 400/2500, Loss: 0.1606
+  Train Batch 450/2500, Loss: 0.0618
+  Train Batch 500/2500, Loss: 0.2522
+  Train Batch 550/2500, Loss: 0.0401
+  Train Batch 600/2500, Loss: 0.0140
+  Train Batch 650/2500, Loss: 0.1768
+  Train Batch 700/2500, Loss: 0.2584
+  Train Batch 750/2500, Loss: 0.1945
+  Train Batch 800/2500, Loss: 0.1132
+  Train Batch 850/2500, Loss: 0.0416
+  Train Batch 900/2500, Loss: 0.0724
+  Train Batch 950/2500, Loss: 0.0078
+  Train Batch 1000/2500, Loss: 0.2989
+  Train Batch 1050/2500, Loss: 0.0728
+  Train Batch 1100/2500, Loss: 0.0278
+  Train Batch 1150/2500, Loss: 0.0102
+  Train Batch 1200/2500, Loss: 0.1517
+  Train Batch 1250/2500, Loss: 0.0322
+  Train Batch 1300/2500, Loss: 0.0055
+  Train Batch 1350/2500, Loss: 0.0644
+  Train Batch 1400/2500, Loss: 0.0700
+  Train Batch 1450/2500, Loss: 0.1390
+  Train Batch 1500/2500, Loss: 0.0649
+  Train Batch 1550/2500, Loss: 0.0406
+  Train Batch 1600/2500, Loss: 0.5972
+  Train Batch 1650/2500, Loss: 0.0063
+  Train Batch 1700/2500, Loss: 0.1600
+  Train Batch 1750/2500, Loss: 0.0484
+  Train Batch 1800/2500, Loss: 0.2562
+  Train Batch 1850/2500, Loss: 1.2680
+  Train Batch 1900/2500, Loss: 0.3284
+  Train Batch 1950/2500, Loss: 1.0481
+  Train Batch 2000/2500, Loss: 0.1936
+  Train Batch 2050/2500, Loss: 0.1399
+  Train Batch 2100/2500, Loss: 0.0438
+  Train Batch 2150/2500, Loss: 0.0958
+  Train Batch 2200/2500, Loss: 0.2366
+  Train Batch 2250/2500, Loss: 0.0912
+  Train Batch 2300/2500, Loss: 0.1198
+  Train Batch 2350/2500, Loss: 0.2373
+  Train Batch 2400/2500, Loss: 0.3260
+  Train Batch 2450/2500, Loss: 0.0442
+  Train Batch 2500/2500, Loss: 0.0065
+Epoch 4 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 4/15 Finished - Loss: 0.1427, Val Acc: 93.97%, Time: 18696.19s
+
+Epoch 5 is starting training...
+  Train Batch 50/2500, Loss: 0.0076
+  Train Batch 100/2500, Loss: 0.2121
+  Train Batch 150/2500, Loss: 0.1013
+  Train Batch 200/2500, Loss: 0.0879
+  Train Batch 250/2500, Loss: 0.1032
+  Train Batch 300/2500, Loss: 0.1194
+  Train Batch 350/2500, Loss: 0.1243
+  Train Batch 400/2500, Loss: 0.2472
+  Train Batch 450/2500, Loss: 0.0107
+  Train Batch 500/2500, Loss: 0.1402
+  Train Batch 550/2500, Loss: 0.0530
+  Train Batch 600/2500, Loss: 0.0138
+  Train Batch 650/2500, Loss: 0.1232
+  Train Batch 700/2500, Loss: 0.0709
+  Train Batch 750/2500, Loss: 0.0068
+  Train Batch 800/2500, Loss: 0.1249
+  Train Batch 850/2500, Loss: 0.0038
+  Train Batch 900/2500, Loss: 0.0550
+  Train Batch 950/2500, Loss: 0.1304
+  Train Batch 1000/2500, Loss: 0.0175
+  Train Batch 1050/2500, Loss: 0.2212
+  Train Batch 1100/2500, Loss: 0.0651
+  Train Batch 1150/2500, Loss: 0.0142
+  Train Batch 1200/2500, Loss: 0.0371
+  Train Batch 1250/2500, Loss: 0.1377
+  Train Batch 1300/2500, Loss: 0.0974
+  Train Batch 1350/2500, Loss: 0.0102
+  Train Batch 1400/2500, Loss: 0.0314
+  Train Batch 1450/2500, Loss: 0.0998
+  Train Batch 1500/2500, Loss: 0.0655
+  Train Batch 1550/2500, Loss: 0.1019
+  Train Batch 1600/2500, Loss: 0.2580
+  Train Batch 1650/2500, Loss: 0.0650
+  Train Batch 1700/2500, Loss: 0.0599
+  Train Batch 1750/2500, Loss: 0.0687
+  Train Batch 1800/2500, Loss: 0.0186
+  Train Batch 1850/2500, Loss: 0.0267
+  Train Batch 1900/2500, Loss: 0.1487
+  Train Batch 1950/2500, Loss: 0.1170
+  Train Batch 2000/2500, Loss: 0.0642
+  Train Batch 2050/2500, Loss: 0.0120
+  Train Batch 2100/2500, Loss: 0.0881
+  Train Batch 2150/2500, Loss: 0.1236
+  Train Batch 2200/2500, Loss: 0.0312
+  Train Batch 2250/2500, Loss: 0.0877
+  Train Batch 2300/2500, Loss: 0.0961
+  Train Batch 2350/2500, Loss: 0.0120
+  Train Batch 2400/2500, Loss: 0.0983
+  Train Batch 2450/2500, Loss: 0.0270
+  Train Batch 2500/2500, Loss: 0.0392
+Epoch 5 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 5/15 Finished - Loss: 0.1289, Val Acc: 92.90%, Time: 7059.41s
+
+Epoch 6 is starting training...
+  Train Batch 50/2500, Loss: 0.0399
+  Train Batch 100/2500, Loss: 0.0868
+  Train Batch 150/2500, Loss: 0.1531
+  Train Batch 200/2500, Loss: 0.0506
+  Train Batch 250/2500, Loss: 0.0048
+  Train Batch 300/2500, Loss: 0.0231
+  Train Batch 350/2500, Loss: 0.0472
+  Train Batch 400/2500, Loss: 0.0810
+  Train Batch 450/2500, Loss: 0.3455
+  Train Batch 500/2500, Loss: 0.0321
+  Train Batch 550/2500, Loss: 0.0710
+  Train Batch 600/2500, Loss: 0.0165
+  Train Batch 650/2500, Loss: 0.0411
+  Train Batch 700/2500, Loss: 0.0506
+  Train Batch 750/2500, Loss: 0.0747
+  Train Batch 800/2500, Loss: 0.0702
+  Train Batch 850/2500, Loss: 0.0356
+  Train Batch 900/2500, Loss: 0.3498
+  Train Batch 950/2500, Loss: 0.0428
+  Train Batch 1000/2500, Loss: 0.2027
+  Train Batch 1050/2500, Loss: 0.0254
+  Train Batch 1100/2500, Loss: 0.4642
+  Train Batch 1150/2500, Loss: 0.1663
+  Train Batch 1200/2500, Loss: 0.0529
+  Train Batch 1250/2500, Loss: 0.0419
+  Train Batch 1300/2500, Loss: 0.2263
+  Train Batch 1350/2500, Loss: 0.0168
+  Train Batch 1400/2500, Loss: 0.1390
+  Train Batch 1450/2500, Loss: 0.0141
+  Train Batch 1500/2500, Loss: 0.1537
+  Train Batch 1550/2500, Loss: 0.0341
+  Train Batch 1600/2500, Loss: 0.0622
+  Train Batch 1650/2500, Loss: 0.0104
+  Train Batch 1700/2500, Loss: 0.0066
+  Train Batch 1750/2500, Loss: 0.1635
+  Train Batch 1800/2500, Loss: 0.0944
+  Train Batch 1850/2500, Loss: 0.0745
+  Train Batch 1900/2500, Loss: 0.0206
+  Train Batch 1950/2500, Loss: 0.1480
+  Train Batch 2000/2500, Loss: 0.0509
+  Train Batch 2050/2500, Loss: 0.0409
+  Train Batch 2100/2500, Loss: 0.0562
+  Train Batch 2150/2500, Loss: 0.0085
+  Train Batch 2200/2500, Loss: 0.2229
+  Train Batch 2250/2500, Loss: 1.0302
+  Train Batch 2300/2500, Loss: 0.2074
+  Train Batch 2350/2500, Loss: 0.0011
+  Train Batch 2400/2500, Loss: 0.0572
+  Train Batch 2450/2500, Loss: 0.0352
+  Train Batch 2500/2500, Loss: 0.0180
+Epoch 6 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 6/15 Finished - Loss: 0.1134, Val Acc: 92.62%, Time: 5629.53s
+
+Epoch 7 is starting training...
+  Train Batch 50/2500, Loss: 0.0061
+  Train Batch 100/2500, Loss: 0.0807
+  Train Batch 150/2500, Loss: 0.0811
+  Train Batch 200/2500, Loss: 0.1117
+  Train Batch 250/2500, Loss: 0.0480
+  Train Batch 300/2500, Loss: 0.0565
+  Train Batch 350/2500, Loss: 0.1366
+  Train Batch 400/2500, Loss: 0.0007
+  Train Batch 450/2500, Loss: 0.0353
+  Train Batch 500/2500, Loss: 0.0715
+  Train Batch 550/2500, Loss: 0.2195
+  Train Batch 600/2500, Loss: 0.0055
+  Train Batch 650/2500, Loss: 0.1126
+  Train Batch 700/2500, Loss: 0.0066
+  Train Batch 750/2500, Loss: 0.0447
+  Train Batch 800/2500, Loss: 0.0591
+  Train Batch 850/2500, Loss: 0.0986
+  Train Batch 900/2500, Loss: 0.1523
+  Train Batch 950/2500, Loss: 1.6035
+  Train Batch 1000/2500, Loss: 0.3048
+  Train Batch 1050/2500, Loss: 0.1368
+  Train Batch 1100/2500, Loss: 0.1355
+  Train Batch 1150/2500, Loss: 0.0392
+  Train Batch 1200/2500, Loss: 0.0914
+  Train Batch 1250/2500, Loss: 0.0219
+  Train Batch 1300/2500, Loss: 0.0201
+  Train Batch 1350/2500, Loss: 0.2046
+  Train Batch 1400/2500, Loss: 0.1237
+  Train Batch 1450/2500, Loss: 0.0379
+  Train Batch 1500/2500, Loss: 0.3972
+  Train Batch 1550/2500, Loss: 0.3658
+  Train Batch 1600/2500, Loss: 0.0141
+  Train Batch 1650/2500, Loss: 0.3158
+  Train Batch 1700/2500, Loss: 0.0416
+  Train Batch 1750/2500, Loss: 0.0533
+  Train Batch 1800/2500, Loss: 0.3467
+  Train Batch 1850/2500, Loss: 0.0500
+  Train Batch 1900/2500, Loss: 0.0038
+  Train Batch 1950/2500, Loss: 0.0329
+  Train Batch 2000/2500, Loss: 0.0668
+  Train Batch 2050/2500, Loss: 0.0526
+  Train Batch 2100/2500, Loss: 0.0486
+  Train Batch 2150/2500, Loss: 0.0657
+  Train Batch 2200/2500, Loss: 0.5752
+  Train Batch 2250/2500, Loss: 0.0055
+  Train Batch 2300/2500, Loss: 0.2799
+  Train Batch 2350/2500, Loss: 0.0215
+  Train Batch 2400/2500, Loss: 0.3656
+  Train Batch 2450/2500, Loss: 0.1664
+  Train Batch 2500/2500, Loss: 0.0091
+Epoch 7 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 7/15 Finished - Loss: 0.1034, Val Acc: 93.65%, Time: 6225.29s
+
+Epoch 8 is starting training...
+  Train Batch 50/2500, Loss: 0.0371
+  Train Batch 100/2500, Loss: 0.0461
+  Train Batch 150/2500, Loss: 0.1329
+  Train Batch 200/2500, Loss: 0.0072
+  Train Batch 250/2500, Loss: 0.0216
+  Train Batch 300/2500, Loss: 0.1718
+  Train Batch 350/2500, Loss: 0.0034
+  Train Batch 400/2500, Loss: 0.1685
+  Train Batch 450/2500, Loss: 0.0323
+  Train Batch 500/2500, Loss: 0.0224
+  Train Batch 550/2500, Loss: 0.1856
+  Train Batch 600/2500, Loss: 0.0722
+  Train Batch 650/2500, Loss: 0.0213
+  Train Batch 700/2500, Loss: 0.0190
+  Train Batch 750/2500, Loss: 0.3069
+  Train Batch 800/2500, Loss: 0.0238
+  Train Batch 850/2500, Loss: 0.0115
+  Train Batch 900/2500, Loss: 0.1450
+  Train Batch 950/2500, Loss: 0.0612
+  Train Batch 1000/2500, Loss: 0.0939
+  Train Batch 1050/2500, Loss: 0.0106
+  Train Batch 1100/2500, Loss: 0.1026
+  Train Batch 1150/2500, Loss: 0.0198
+  Train Batch 1200/2500, Loss: 0.0356
+  Train Batch 1250/2500, Loss: 0.0090
+  Train Batch 1300/2500, Loss: 0.0204
+  Train Batch 1350/2500, Loss: 0.0763
+  Train Batch 1400/2500, Loss: 0.0041
+  Train Batch 1450/2500, Loss: 0.0445
+  Train Batch 1500/2500, Loss: 0.1555
+  Train Batch 1550/2500, Loss: 0.2559
+  Train Batch 1600/2500, Loss: 0.0206
+  Train Batch 1650/2500, Loss: 0.1617
+  Train Batch 1700/2500, Loss: 0.0244
+  Train Batch 1750/2500, Loss: 0.1783
+  Train Batch 1800/2500, Loss: 0.0201
+  Train Batch 1850/2500, Loss: 0.0072
+  Train Batch 1900/2500, Loss: 0.0011
+  Train Batch 1950/2500, Loss: 0.1220
+  Train Batch 2000/2500, Loss: 0.5143
+  Train Batch 2050/2500, Loss: 0.0225
+  Train Batch 2100/2500, Loss: 0.0788
+  Train Batch 2150/2500, Loss: 0.1688
+  Train Batch 2200/2500, Loss: 0.0784
+  Train Batch 2250/2500, Loss: 0.0794
+  Train Batch 2300/2500, Loss: 0.0010
+  Train Batch 2350/2500, Loss: 0.0034
+  Train Batch 2400/2500, Loss: 0.0003
+  Train Batch 2450/2500, Loss: 0.7658
+  Train Batch 2500/2500, Loss: 0.2452
+Epoch 8 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 8/15 Finished - Loss: 0.0954, Val Acc: 93.50%, Time: 5646.11s
+
+Epoch 9 is starting training...
+  Train Batch 50/2500, Loss: 0.0121
+  Train Batch 100/2500, Loss: 0.0050
+  Train Batch 150/2500, Loss: 0.0194
+  Train Batch 200/2500, Loss: 0.0244
+  Train Batch 250/2500, Loss: 0.0443
+  Train Batch 300/2500, Loss: 0.0018
+  Train Batch 350/2500, Loss: 0.0096
+  Train Batch 400/2500, Loss: 0.1031
+  Train Batch 450/2500, Loss: 0.4158
+  Train Batch 500/2500, Loss: 0.5224
+  Train Batch 550/2500, Loss: 0.0241
+  Train Batch 600/2500, Loss: 0.0729
+  Train Batch 650/2500, Loss: 0.1127
+  Train Batch 700/2500, Loss: 0.0154
+  Train Batch 750/2500, Loss: 0.0197
+  Train Batch 800/2500, Loss: 0.1075
+  Train Batch 850/2500, Loss: 0.0300
+  Train Batch 900/2500, Loss: 0.1806
+  Train Batch 950/2500, Loss: 0.0136
+  Train Batch 1000/2500, Loss: 0.0039
+  Train Batch 1050/2500, Loss: 0.0472
+  Train Batch 1100/2500, Loss: 0.1270
+  Train Batch 1150/2500, Loss: 0.1388
+  Train Batch 1200/2500, Loss: 0.0404
+  Train Batch 1250/2500, Loss: 0.0992
+  Train Batch 1300/2500, Loss: 0.0444
+  Train Batch 1350/2500, Loss: 0.2369
+  Train Batch 1400/2500, Loss: 0.3003
+  Train Batch 1450/2500, Loss: 0.0027
+  Train Batch 1500/2500, Loss: 0.1735
+  Train Batch 1550/2500, Loss: 0.0053
+  Train Batch 1600/2500, Loss: 0.0064
+  Train Batch 1650/2500, Loss: 0.0189
+  Train Batch 1700/2500, Loss: 0.0093
+  Train Batch 1750/2500, Loss: 0.0243
+  Train Batch 1800/2500, Loss: 0.0721
+  Train Batch 1850/2500, Loss: 0.0709
+  Train Batch 1900/2500, Loss: 0.0741
+  Train Batch 1950/2500, Loss: 0.0336
+  Train Batch 2000/2500, Loss: 0.0456
+  Train Batch 2050/2500, Loss: 0.1022
+  Train Batch 2100/2500, Loss: 0.1516
+  Train Batch 2150/2500, Loss: 0.1079
+  Train Batch 2200/2500, Loss: 0.0034
+  Train Batch 2250/2500, Loss: 0.3661
+  Train Batch 2300/2500, Loss: 0.0596
+  Train Batch 2350/2500, Loss: 0.0159
+  Train Batch 2400/2500, Loss: 0.0682
+  Train Batch 2450/2500, Loss: 0.1063
+  Train Batch 2500/2500, Loss: 0.0186
+Epoch 9 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 9/15 Finished - Loss: 0.0855, Val Acc: 94.28%, Time: 3968.14s
+
+Epoch 10 is starting training...
+  Train Batch 50/2500, Loss: 0.1368
+  Train Batch 100/2500, Loss: 0.0652
+  Train Batch 150/2500, Loss: 0.0474
+  Train Batch 200/2500, Loss: 0.0058
+  Train Batch 250/2500, Loss: 0.0146
+  Train Batch 300/2500, Loss: 0.0304
+  Train Batch 350/2500, Loss: 0.0016
+  Train Batch 400/2500, Loss: 0.0143
+  Train Batch 450/2500, Loss: 0.0057
+  Train Batch 500/2500, Loss: 0.0059
+  Train Batch 550/2500, Loss: 0.0382
+  Train Batch 600/2500, Loss: 0.1000
+  Train Batch 650/2500, Loss: 0.0416
+  Train Batch 700/2500, Loss: 0.0047
+  Train Batch 750/2500, Loss: 0.0216
+  Train Batch 800/2500, Loss: 0.0025
+  Train Batch 850/2500, Loss: 0.0313
+  Train Batch 900/2500, Loss: 0.0237
+  Train Batch 950/2500, Loss: 0.0421
+  Train Batch 1000/2500, Loss: 0.0253
+  Train Batch 1050/2500, Loss: 0.0098
+  Train Batch 1100/2500, Loss: 0.1690
+  Train Batch 1150/2500, Loss: 0.8402
+  Train Batch 1200/2500, Loss: 0.7356
+  Train Batch 1250/2500, Loss: 0.0515
+  Train Batch 1300/2500, Loss: 0.0010
+  Train Batch 1350/2500, Loss: 0.0019
+  Train Batch 1400/2500, Loss: 0.0642
+  Train Batch 1450/2500, Loss: 0.0014
+  Train Batch 1500/2500, Loss: 0.0683
+  Train Batch 1550/2500, Loss: 0.0030
+  Train Batch 1600/2500, Loss: 0.0564
+  Train Batch 1650/2500, Loss: 0.0528
+  Train Batch 1700/2500, Loss: 0.0026
+  Train Batch 1750/2500, Loss: 0.0524
+  Train Batch 1800/2500, Loss: 0.0303
+  Train Batch 1850/2500, Loss: 0.0543
+  Train Batch 1900/2500, Loss: 0.0016
+  Train Batch 1950/2500, Loss: 0.1101
+  Train Batch 2000/2500, Loss: 0.0481
+  Train Batch 2050/2500, Loss: 0.0022
+  Train Batch 2100/2500, Loss: 0.0276
+  Train Batch 2150/2500, Loss: 0.1177
+  Train Batch 2200/2500, Loss: 0.1013
+  Train Batch 2250/2500, Loss: 0.2065
+  Train Batch 2300/2500, Loss: 0.0174
+  Train Batch 2350/2500, Loss: 0.2057
+  Train Batch 2400/2500, Loss: 0.0378
+  Train Batch 2450/2500, Loss: 0.4548
+  Train Batch 2500/2500, Loss: 0.0095
+Epoch 10 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 10/15 Finished - Loss: 0.0821, Val Acc: 93.80%, Time: 8501.90s
+
+Epoch 11 is starting training...
+  Train Batch 50/2500, Loss: 0.0005
+  Train Batch 100/2500, Loss: 0.2028
+  Train Batch 150/2500, Loss: 0.6569
+  Train Batch 200/2500, Loss: 0.0027
+  Train Batch 250/2500, Loss: 0.0099
+  Train Batch 300/2500, Loss: 0.0031
+  Train Batch 350/2500, Loss: 0.1375
+  Train Batch 400/2500, Loss: 0.0025
+  Train Batch 450/2500, Loss: 0.0145
+  Train Batch 500/2500, Loss: 0.0027
+  Train Batch 550/2500, Loss: 0.1698
+  Train Batch 600/2500, Loss: 0.0516
+  Train Batch 650/2500, Loss: 0.0031
+  Train Batch 700/2500, Loss: 0.1123
+  Train Batch 750/2500, Loss: 0.0708
+  Train Batch 800/2500, Loss: 0.0082
+  Train Batch 850/2500, Loss: 0.1561
+  Train Batch 900/2500, Loss: 0.0028
+  Train Batch 950/2500, Loss: 0.0860
+  Train Batch 1000/2500, Loss: 0.0916
+  Train Batch 1050/2500, Loss: 0.0331
+  Train Batch 1100/2500, Loss: 0.0063
+  Train Batch 1150/2500, Loss: 0.0624
+  Train Batch 1200/2500, Loss: 0.0407
+  Train Batch 1250/2500, Loss: 0.1236
+  Train Batch 1300/2500, Loss: 0.0172
+  Train Batch 1350/2500, Loss: 0.0100
+  Train Batch 1400/2500, Loss: 0.0070
+  Train Batch 1450/2500, Loss: 0.0530
+  Train Batch 1500/2500, Loss: 0.8890
+  Train Batch 1550/2500, Loss: 0.0199
+  Train Batch 1600/2500, Loss: 0.0163
+  Train Batch 1650/2500, Loss: 0.0058
+  Train Batch 1700/2500, Loss: 0.6594
+  Train Batch 1750/2500, Loss: 0.0084
+  Train Batch 1800/2500, Loss: 0.2573
+  Train Batch 1850/2500, Loss: 0.0162
+  Train Batch 1900/2500, Loss: 0.0019
+  Train Batch 1950/2500, Loss: 0.2383
+  Train Batch 2000/2500, Loss: 0.0076
+  Train Batch 2050/2500, Loss: 0.0004
+  Train Batch 2100/2500, Loss: 0.0058
+  Train Batch 2150/2500, Loss: 0.0149
+  Train Batch 2200/2500, Loss: 0.2017
+  Train Batch 2250/2500, Loss: 0.0952
+  Train Batch 2300/2500, Loss: 0.0186
+  Train Batch 2350/2500, Loss: 0.0161
+  Train Batch 2400/2500, Loss: 0.0041
+  Train Batch 2450/2500, Loss: 0.0380
+  Train Batch 2500/2500, Loss: 0.0282
+Epoch 11 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 11/15 Finished - Loss: 0.0750, Val Acc: 94.78%, Time: 6560.51s
+
+Epoch 12 is starting training...
+  Train Batch 50/2500, Loss: 0.0409
+  Train Batch 100/2500, Loss: 0.0237
+  Train Batch 150/2500, Loss: 0.0052
+  Train Batch 200/2500, Loss: 0.0022
+  Train Batch 250/2500, Loss: 0.0642
+  Train Batch 300/2500, Loss: 0.0040
+  Train Batch 350/2500, Loss: 0.0036
+  Train Batch 400/2500, Loss: 0.0985
+  Train Batch 450/2500, Loss: 0.0061
+  Train Batch 500/2500, Loss: 0.0020
+  Train Batch 550/2500, Loss: 0.1386
+  Train Batch 600/2500, Loss: 0.0830
+  Train Batch 650/2500, Loss: 0.0197
+  Train Batch 700/2500, Loss: 0.0039
+  Train Batch 750/2500, Loss: 0.0543
+  Train Batch 800/2500, Loss: 0.0031
+  Train Batch 850/2500, Loss: 0.2524
+  Train Batch 900/2500, Loss: 0.1511
+  Train Batch 950/2500, Loss: 0.0527
+  Train Batch 1000/2500, Loss: 0.0088
+  Train Batch 1050/2500, Loss: 0.0061
+  Train Batch 1100/2500, Loss: 0.1611
+  Train Batch 1150/2500, Loss: 0.1727
+  Train Batch 1200/2500, Loss: 0.0385
+  Train Batch 1250/2500, Loss: 0.0529
+  Train Batch 1300/2500, Loss: 0.0250
+  Train Batch 1350/2500, Loss: 0.0406
+  Train Batch 1400/2500, Loss: 0.2685
+  Train Batch 1450/2500, Loss: 0.1184
+  Train Batch 1500/2500, Loss: 0.1083
+  Train Batch 1550/2500, Loss: 0.0944
+  Train Batch 1600/2500, Loss: 0.0191
+  Train Batch 1650/2500, Loss: 0.3616
+  Train Batch 1700/2500, Loss: 0.1269
+  Train Batch 1750/2500, Loss: 0.0033
+  Train Batch 1800/2500, Loss: 0.0094
+  Train Batch 1850/2500, Loss: 0.0100
+  Train Batch 1900/2500, Loss: 0.0500
+  Train Batch 1950/2500, Loss: 0.0121
+  Train Batch 2000/2500, Loss: 0.1304
+  Train Batch 2050/2500, Loss: 0.3377
+  Train Batch 2100/2500, Loss: 0.0731
+  Train Batch 2150/2500, Loss: 0.0617
+  Train Batch 2200/2500, Loss: 0.0172
+  Train Batch 2250/2500, Loss: 0.0656
+  Train Batch 2300/2500, Loss: 0.1090
+  Train Batch 2350/2500, Loss: 0.8465
+  Train Batch 2400/2500, Loss: 0.0548
+  Train Batch 2450/2500, Loss: 0.0284
+  Train Batch 2500/2500, Loss: 0.2620
+Epoch 12 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 12/15 Finished - Loss: 0.0724, Val Acc: 94.92%, Time: 3795.71s
+
+Epoch 13 is starting training...
+  Train Batch 50/2500, Loss: 0.0432
+  Train Batch 100/2500, Loss: 0.1735
+  Train Batch 150/2500, Loss: 0.0877
+  Train Batch 200/2500, Loss: 0.0109
+  Train Batch 250/2500, Loss: 0.0207
+  Train Batch 300/2500, Loss: 0.0589
+  Train Batch 350/2500, Loss: 0.0048
+  Train Batch 400/2500, Loss: 0.0102
+  Train Batch 450/2500, Loss: 0.2385
+  Train Batch 500/2500, Loss: 0.0634
+  Train Batch 550/2500, Loss: 0.1402
+  Train Batch 600/2500, Loss: 0.0099
+  Train Batch 650/2500, Loss: 0.0046
+  Train Batch 700/2500, Loss: 0.4454
+  Train Batch 750/2500, Loss: 0.0045
+  Train Batch 800/2500, Loss: 0.0030
+  Train Batch 850/2500, Loss: 0.1138
+  Train Batch 900/2500, Loss: 0.0041
+  Train Batch 950/2500, Loss: 0.0019
+  Train Batch 1000/2500, Loss: 0.0361
+  Train Batch 1050/2500, Loss: 0.0026
+  Train Batch 1100/2500, Loss: 0.3558
+  Train Batch 1150/2500, Loss: 0.0067
+  Train Batch 1200/2500, Loss: 0.0016
+  Train Batch 1250/2500, Loss: 0.0014
+  Train Batch 1300/2500, Loss: 0.0104
+  Train Batch 1350/2500, Loss: 0.0026
+  Train Batch 1400/2500, Loss: 0.0664
+  Train Batch 1450/2500, Loss: 0.0183
+  Train Batch 1500/2500, Loss: 0.0243
+  Train Batch 1550/2500, Loss: 0.0015
+  Train Batch 1600/2500, Loss: 0.0568
+  Train Batch 1650/2500, Loss: 0.0002
+  Train Batch 1700/2500, Loss: 0.0269
+  Train Batch 1750/2500, Loss: 0.0437
+  Train Batch 1800/2500, Loss: 0.0653
+  Train Batch 1850/2500, Loss: 0.0569
+  Train Batch 1900/2500, Loss: 0.0153
+  Train Batch 1950/2500, Loss: 0.0003
+  Train Batch 2000/2500, Loss: 0.0374
+  Train Batch 2050/2500, Loss: 0.0099
+  Train Batch 2100/2500, Loss: 0.1434
+  Train Batch 2150/2500, Loss: 0.0979
+  Train Batch 2200/2500, Loss: 0.0062
+  Train Batch 2250/2500, Loss: 0.0809
+  Train Batch 2300/2500, Loss: 0.0013
+  Train Batch 2350/2500, Loss: 0.0012
+  Train Batch 2400/2500, Loss: 0.1316
+  Train Batch 2450/2500, Loss: 0.0423
+  Train Batch 2500/2500, Loss: 0.0677
+Epoch 13 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 13/15 Finished - Loss: 0.0694, Val Acc: 94.72%, Time: 5290.28s
+
+Epoch 14 is starting training...
+  Train Batch 50/2500, Loss: 0.0010
+  Train Batch 100/2500, Loss: 0.0094
+  Train Batch 150/2500, Loss: 0.0021
+  Train Batch 200/2500, Loss: 0.0038
+  Train Batch 250/2500, Loss: 0.0472
+  Train Batch 300/2500, Loss: 0.0014
+  Train Batch 350/2500, Loss: 0.0013
+  Train Batch 400/2500, Loss: 0.0164
+  Train Batch 450/2500, Loss: 0.0474
+  Train Batch 500/2500, Loss: 0.0510
+  Train Batch 550/2500, Loss: 0.0188
+  Train Batch 600/2500, Loss: 0.0017
+  Train Batch 650/2500, Loss: 0.0051
+  Train Batch 700/2500, Loss: 0.2939
+  Train Batch 750/2500, Loss: 0.0005
+  Train Batch 800/2500, Loss: 0.0042
+  Train Batch 850/2500, Loss: 0.0440
+  Train Batch 900/2500, Loss: 0.0004
+  Train Batch 950/2500, Loss: 0.0105
+  Train Batch 1000/2500, Loss: 0.0464
+  Train Batch 1050/2500, Loss: 0.1144
+  Train Batch 1100/2500, Loss: 0.1304
+  Train Batch 1150/2500, Loss: 0.0014
+  Train Batch 1200/2500, Loss: 0.0567
+  Train Batch 1250/2500, Loss: 0.0003
+  Train Batch 1300/2500, Loss: 0.0294
+  Train Batch 1350/2500, Loss: 0.0435
+  Train Batch 1400/2500, Loss: 0.0067
+  Train Batch 1450/2500, Loss: 0.1045
+  Train Batch 1500/2500, Loss: 0.0786
+  Train Batch 1550/2500, Loss: 0.0251
+  Train Batch 1600/2500, Loss: 0.2719
+  Train Batch 1650/2500, Loss: 0.0068
+  Train Batch 1700/2500, Loss: 0.0349
+  Train Batch 1750/2500, Loss: 0.0031
+  Train Batch 1800/2500, Loss: 0.0114
+  Train Batch 1850/2500, Loss: 0.0010
+  Train Batch 1900/2500, Loss: 0.0261
+  Train Batch 1950/2500, Loss: 0.0069
+  Train Batch 2000/2500, Loss: 0.0951
+  Train Batch 2050/2500, Loss: 0.0022
+  Train Batch 2100/2500, Loss: 0.1166
+  Train Batch 2150/2500, Loss: 0.0713
+  Train Batch 2200/2500, Loss: 0.0167
+  Train Batch 2250/2500, Loss: 0.0015
+  Train Batch 2300/2500, Loss: 0.0052
+  Train Batch 2350/2500, Loss: 0.0133
+  Train Batch 2400/2500, Loss: 0.0026
+  Train Batch 2450/2500, Loss: 0.0064
+  Train Batch 2500/2500, Loss: 0.0426
+Epoch 14 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 14/15 Finished - Loss: 0.0634, Val Acc: 93.20%, Time: 4459.67s
+
+Epoch 15 is starting training...
+  Train Batch 50/2500, Loss: 0.0015
+  Train Batch 100/2500, Loss: 0.0627
+  Train Batch 150/2500, Loss: 0.0126
+  Train Batch 200/2500, Loss: 0.0499
+  Train Batch 250/2500, Loss: 0.0921
+  Train Batch 300/2500, Loss: 0.0002
+  Train Batch 350/2500, Loss: 0.0020
+  Train Batch 400/2500, Loss: 0.0192
+  Train Batch 450/2500, Loss: 0.1982
+  Train Batch 500/2500, Loss: 0.0140
+  Train Batch 550/2500, Loss: 0.8948
+  Train Batch 600/2500, Loss: 0.0115
+  Train Batch 650/2500, Loss: 0.0037
+  Train Batch 700/2500, Loss: 0.0025
+  Train Batch 750/2500, Loss: 0.0084
+  Train Batch 800/2500, Loss: 0.0026
+  Train Batch 850/2500, Loss: 0.0003
+  Train Batch 900/2500, Loss: 0.0064
+  Train Batch 950/2500, Loss: 0.0057
+  Train Batch 1000/2500, Loss: 0.0071
+  Train Batch 1050/2500, Loss: 0.0014
+  Train Batch 1100/2500, Loss: 0.0013
+  Train Batch 1150/2500, Loss: 0.0759
+  Train Batch 1200/2500, Loss: 0.0021
+  Train Batch 1250/2500, Loss: 1.1724
+  Train Batch 1300/2500, Loss: 0.0934
+  Train Batch 1350/2500, Loss: 0.1043
+  Train Batch 1400/2500, Loss: 0.0026
+  Train Batch 1450/2500, Loss: 0.0067
+  Train Batch 1500/2500, Loss: 0.0019
+  Train Batch 1550/2500, Loss: 0.0006
+  Train Batch 1600/2500, Loss: 0.0711
+  Train Batch 1650/2500, Loss: 0.0147
+  Train Batch 1700/2500, Loss: 0.0012
+  Train Batch 1750/2500, Loss: 0.2183
+  Train Batch 1800/2500, Loss: 0.0054
+  Train Batch 1850/2500, Loss: 0.0007
+  Train Batch 1900/2500, Loss: 0.0285
+  Train Batch 1950/2500, Loss: 0.0688
+  Train Batch 2000/2500, Loss: 0.0113
+  Train Batch 2050/2500, Loss: 0.0219
+  Train Batch 2100/2500, Loss: 0.0044
+  Train Batch 2150/2500, Loss: 0.2570
+  Train Batch 2200/2500, Loss: 0.4379
+  Train Batch 2250/2500, Loss: 0.1196
+  Train Batch 2300/2500, Loss: 0.0939
+  Train Batch 2350/2500, Loss: 0.0214
+  Train Batch 2400/2500, Loss: 0.0653
+  Train Batch 2450/2500, Loss: 0.0112
+  Train Batch 2500/2500, Loss: 0.0005
+Epoch 15 is starting validation...
+  Val Batch 50/500
+  Val Batch 100/500
+  Val Batch 150/500
+  Val Batch 200/500
+  Val Batch 250/500
+  Val Batch 300/500
+  Val Batch 350/500
+  Val Batch 400/500
+  Val Batch 450/500
+  Val Batch 500/500
+Epoch 15/15 Finished - Loss: 0.0571, Val Acc: 93.53%, Time: 4535.10s
+
+Final Evaluation Metrics (Test Set):
+Accuracy: 91.22%
+F1 Score: 0.9122
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        Fake       0.93      0.89      0.91      2000
+        Real       0.90      0.93      0.91      2000
+
+    accuracy                           0.91      4000
+   macro avg       0.91      0.91      0.91      4000
+weighted avg       0.91      0.91      0.91      4000
+
+
+Model saved to C:\Users\hp\Documents\GitHub\trueframe-ai\server\models\deepfake_model.pth
