@@ -294,52 +294,48 @@ export default function DemoPage() {
                   key="result"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  className="space-y-8"
+                  className="space-y-10 flex flex-col justify-center h-full"
                 >
-                  <div className={cn(
-                    "p-10 rounded-[48px] border flex flex-col items-center text-center shadow-2xl relative overflow-hidden bg-white/[0.01]",
-                    result.prediction === "fake" ? "border-red-500/20" : "border-emerald-500/20"
-                  )}>
-                    <div className="mb-6">
-                      {result.prediction === "fake" ? (
-                        <div className="w-20 h-20 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center shadow-[0_0_50px_rgba(239,68,68,0.2)]">
-                          <AlertCircle className="w-8 h-8 text-red-500" />
-                        </div>
-                      ) : (
-                        <div className="w-20 h-20 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shadow-[0_0_50px_rgba(16,185,129,0.2)]">
-                          <CheckCircle2 className="w-8 h-8 text-emerald-500" />
-                        </div>
-                      )}
-                    </div>
-
-                    <h3 className="text-[28px] font-bold tracking-tight mb-2 text-white">
-                      {result.prediction === "fake" ? "Synthetic Detected" : "Authenticity Verified"}
-                    </h3>
-                    <p className="text-[10px] text-foreground/30 font-bold uppercase tracking-[0.3em] mb-8 italic">Telemetry Build v1.0.4</p>
-                    
-                    <div className="w-full h-px bg-white/[0.05] mb-8" />
-
-                    <div className="flex items-end gap-1 mb-2">
-                      <p className="text-[64px] font-bold tracking-tighter italic leading-none">{result.confidence_info.split('%')[0]}</p>
-                      <p className="text-[24px] font-bold italic opacity-20 pb-2">%</p>
-                    </div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-foreground/20">Confidence Score</p>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { label: "Frames Scanned", value: result.frames_checked },
-                      { label: "Temporal Accuracy", value: result.prediction === "fake" ? "Suspicious" : "Clean" },
-                    ].map((meta, i) => (
-                      <div key={i} className="glass-card p-6 rounded-[32px] text-center border-white/[0.03] space-y-1">
-                        <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-foreground/20">{meta.label}</p>
-                        <p className="text-xl font-bold tracking-tight text-white">{meta.value}</p>
+                  <div className="flex items-center gap-6">
+                    {result.prediction === "fake" ? (
+                      <div className="w-14 h-14 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
+                        <AlertCircle className="w-6 h-6 text-red-500" />
                       </div>
-                    ))}
+                    ) : (
+                      <div className="w-14 h-14 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
+                        <CheckCircle2 className="w-6 h-6 text-emerald-500" />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="text-3xl font-bold tracking-tight text-white mb-1">
+                        {result.prediction === "fake" ? "Synthetic Detected" : "Authenticity Verified"}
+                      </h3>
+                      <p className="text-foreground/40 text-sm font-medium">
+                        {result.prediction === "fake" ? "Temporal and spatial anomalies found." : "No synthetic manipulation detected across frames."}
+                      </p>
+                    </div>
                   </div>
 
-                  <button className="w-full py-5 bg-white text-black font-bold rounded-3xl text-[14px] hover:bg-neutral-200 hover:scale-[1.02] transition-all shadow-2xl cursor-pointer">
-                    Download forensic_manifest.pdf
+                  <div className="grid grid-cols-2 gap-px bg-white/[0.08] rounded-[32px] overflow-hidden border border-white/[0.08]">
+                    <div className="bg-[#050505] p-8 flex flex-col justify-center">
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-foreground/40 mb-2">Confidence</p>
+                      <p className={cn(
+                        "text-[40px] font-bold tracking-tighter leading-none",
+                        result.prediction === "fake" ? "text-red-400" : "text-emerald-400"
+                      )}>
+                        {result.confidence_info}
+                      </p>
+                    </div>
+                    <div className="bg-[#050505] p-8 flex flex-col justify-center">
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-foreground/40 mb-2">Frames Scanned</p>
+                      <p className="text-[40px] font-bold tracking-tighter leading-none text-white">
+                        {result.frames_checked}
+                      </p>
+                    </div>
+                  </div>
+
+                  <button className="w-full py-4 bg-white/[0.03] border border-white/[0.05] text-white font-medium rounded-[24px] hover:bg-white/[0.08] transition-colors text-sm">
+                    Export Analysis Report
                   </button>
                 </motion.div>
               ) : (
