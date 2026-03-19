@@ -168,7 +168,7 @@ export default function DemoPage() {
   };
 
   return (
-    <div className="h-screen bg-black text-white font-sans antialiased selection:bg-blue-500/30 selection:text-white overflow-hidden flex flex-col">
+    <div className="h-screen bg-black text-white font-sans antialiased selection:bg-emerald-500/30 selection:text-white overflow-hidden flex flex-col">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-12 px-6 max-w-7xl mx-auto w-full flex flex-col justify-center scale-90 origin-top">
@@ -207,7 +207,7 @@ export default function DemoPage() {
                     
                     {file ? (
                       <div className="flex flex-col items-center gap-4">
-                        <div className="p-4 rounded-full bg-blue-500/20 text-blue-400 group-hover:scale-110 transition-transform">
+                        <div className="p-4 rounded-none bg-emerald-500/20 text-emerald-400 group-hover:scale-110 transition-transform">
                           <FileVideo className="w-10 h-10" />
                         </div>
                         <div>
@@ -223,7 +223,7 @@ export default function DemoPage() {
                       </div>
                     ) : (
                       <>
-                        <div className="p-4 rounded-full bg-white/5 text-white/40 group-hover:text-blue-400 group-hover:bg-blue-500/10 transition-all">
+                        <div className="p-4 rounded-none bg-white/5 text-white/40 group-hover:text-emerald-400 group-hover:bg-emerald-500/10 transition-all">
                           <Upload className="w-10 h-10" />
                         </div>
                         <div className="mt-4">
