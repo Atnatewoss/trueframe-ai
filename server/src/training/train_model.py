@@ -26,20 +26,45 @@ def train():
         log_file.write(message + "\n")
         log_file.flush()
 
-    log_and_print(f"\n--- Training Session Started: {settings.LOG_FILE_PATH} ---")
+    log_and_print(f"\n--- Training Session Started (Large Dataset) ---")
 
-    # 1. Setup
-    transform = get_transforms()
-    dataset = load_dataset(settings.DATA_PATH, transform)
-    train_loader, test_loader = get_dataloaders(dataset, settings.BATCH_SIZE, settings.TRAIN_SPLIT)
+    # 1. Setup Data
+    train_transform = get_train_transforms()
+    val_transform = get_val_transforms()
     
-    model = get_model(num_classes=len(dataset.classes))
+    train_path = os.path.join(settings.DATA_PATH, "Train")
+    val_path = os.path.join(settings.DATA_PATH, "Validation")
+    test_path = os.path.join(settings.DATA_PATH, "Test")
+    
+    # Load and Sample Training Set (20k total) - with augmentation
+    full_train_ds = ImageFolder(train_path, transform=train_transform)
+    train_indices = get_balanced_subset_indices(full_train_ds, samples_per_class=10000)
+    train_dataset = Subset(full_train_ds, train_indices)
+    
+    # Load and Sample Validation Set (4k total) - no augmentation
+    full_val_ds = ImageFolder(val_path, transform=val_transform)
+    val_indices = get_balanced_subset_indices(full_val_ds, samples_per_class=2000)
+    val_dataset = Subset(full_val_ds, val_indices)
+    
+    # Load and Sample Test Set (4k total) - no augmentation
+    full_test_ds = ImageFolder(test_path, transform=val_transform)
+    test_indices = get_balanced_subset_indices(full_test_ds, samples_per_class=2000)
+    test_dataset = Subset(full_test_ds, test_indices)
+    
+    train_loader, val_loader, test_loader = get_dataloaders(
+        train_dataset, val_dataset, test_dataset, settings.BATCH_SIZE
+    )
+    
+    model = get_model(num_classes=len(full_train_ds.classes))
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=settings.LEARNING_RATE)
     
     # 2. Training Loop
     epochs = settings.EPOCHS
-    log_and_print(f"Starting training on {len(dataset)} images for {epochs} epochs...")
+    log_and_print(f"Sampled Training: {len(train_dataset)} images")
+    log_and_print(f"Validation: {len(val_dataset)} images")
+    log_and_print(f"Test: {len(test_dataset)} images")
+    log_and_print(f"Epochs: {epochs}")
     
     for epoch in range(epochs):
         model.train()
@@ -55,7 +80,7 @@ def train():
         log_and_print(f"Epoch {epoch+1}/{epochs}, Loss: {running_loss/len(train_loader):.4f}")
         
     # 3. Evaluation
-    metrics = evaluate(model, test_loader, dataset.classes)
+    metrics = evaluate(model, test_loader, full_train_ds.classes)
     
     # Log evaluation results
     log_and_print("\nFinal Evaluation Metrics:")
