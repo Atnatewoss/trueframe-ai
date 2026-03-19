@@ -156,10 +156,10 @@ export default function DemoPage() {
       <Navbar />
 
       <main className="flex-1 pt-32 pb-12 px-6 max-w-7xl mx-auto w-full flex flex-col justify-center">
-        <div className="w-full bg-[#050505] border border-white/[0.05] rounded-[48px] overflow-hidden flex flex-col lg:flex-row shadow-2xl">
+        <div className="w-full bg-[#0a0a0a] border border-white/10 rounded-[32px] overflow-hidden flex flex-col lg:flex-row shadow-2xl relative">
           
-          {/* Left Column: Interaction & Video */}
-          <div className="w-full lg:w-1/2 p-10 lg:p-14 space-y-12">
+          {/* Left Column: Interaction & Video (Input) */}
+          <div className="w-full lg:w-1/2 p-10 lg:p-14 space-y-12 bg-[#050505] relative z-10">
             <SectionHeader 
               title="Forensic Diagnostic"
               subtitle="Deep learning engine optimized for detecting synthetic temporal patterns in high-fidelity media."
@@ -177,8 +177,8 @@ export default function DemoPage() {
                     onDrop={handleDrop}
                     onClick={() => fileInputRef.current?.click()}
                     className={cn(
-                      "relative group cursor-pointer aspect-video rounded-[48px] border-2 border-dashed transition-all flex flex-col items-center justify-center p-12 text-center overflow-hidden",
-                      error ? "border-red-500/30 bg-red-500/5" : "border-white/[0.05] hover:border-white/20 glass-card bg-white/[0.01]"
+                      "relative group cursor-pointer aspect-video rounded-[24px] border border-dashed transition-all flex flex-col items-center justify-center p-12 text-center overflow-hidden",
+                      error ? "border-red-500/30 bg-red-500/5" : "border-white/20 hover:border-white/40 bg-white/[0.02] hover:bg-white/[0.04]"
                     )}
                   >
                     <input 
@@ -195,24 +195,24 @@ export default function DemoPage() {
                           <FileVideo className="w-10 h-10" />
                         </div>
                         <div>
-                          <p className="font-semibold text-lg truncate max-w-[200px]">{file.name}</p>
-                          <p className="text-sm text-foreground/40">{(file.size / (1024 * 1024)).toFixed(2)} MB</p>
+                          <p className="font-semibold text-lg truncate max-w-[200px] text-white">{file.name}</p>
+                          <p className="text-sm text-white/40">{(file.size / (1024 * 1024)).toFixed(2)} MB</p>
                         </div>
                         <button 
                           onClick={(e) => { e.stopPropagation(); runAnalysis(); }}
-                          className="mt-6 px-10 py-4 bg-white text-black font-bold rounded-2xl hover:bg-neutral-200 hover:scale-[1.02] shadow-2xl text-[14px] cursor-pointer transition-all"
+                          className="mt-6 px-10 py-3 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 hover:scale-[1.02] transition-all text-[14px]"
                         >
-                          Verify Frame Authenticity
+                          Verify Authenticity
                         </button>
                       </div>
                     ) : (
                       <>
-                        <div className="p-4 rounded-full bg-white/5 text-foreground/40 group-hover:text-blue-400 group-hover:bg-blue-500/10 transition-all">
+                        <div className="p-4 rounded-full bg-white/5 text-white/40 group-hover:text-blue-400 group-hover:bg-blue-500/10 transition-all">
                           <Upload className="w-10 h-10" />
                         </div>
                         <div className="mt-4">
-                          <p className="font-semibold text-lg">Source Media</p>
-                          <p className="text-sm text-foreground/40 italic">Drop to inject forensic pipeline</p>
+                          <p className="font-medium text-lg text-white/80">Select Source Media</p>
+                          <p className="text-sm text-white/40 mt-1">Drag and drop a video file</p>
                         </div>
                       </>
                     )}
@@ -229,23 +229,23 @@ export default function DemoPage() {
                     key="preview"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="glass-card aspect-video rounded-[36px] overflow-hidden relative group border border-white/[0.05]"
+                    className="aspect-video rounded-[24px] overflow-hidden relative group border border-white/10 bg-black"
                   >
                     {step !== "result" && (
-                      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/80 backdrop-blur-3xl px-8 text-center">
-                        <div className="w-full max-w-sm space-y-8">
+                      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/80 backdrop-blur-md px-8 text-center">
+                        <div className="w-full max-w-sm space-y-6">
                           {steps.map((s, i) => (
-                            <div key={s.id} className="relative flex items-center gap-6">
+                            <div key={s.id} className="relative flex items-center gap-4">
                               <div className={cn(
-                                "w-8 h-8 rounded-full flex items-center justify-center shrink-0 border transition-all duration-500",
-                                s.id === step ? "bg-white border-white text-black shadow-[0_0_20px_rgba(255,255,255,0.3)]" : 
-                                (steps.findIndex(x => x.id === step) > i ? "bg-emerald-500 border-emerald-500 text-white" : "bg-white/[0.03] border-white/[0.05] text-white/20")
+                                "w-6 h-6 rounded-full flex items-center justify-center shrink-0 border transition-all duration-500",
+                                s.id === step ? "bg-white border-white text-black shadow-[0_0_15px_rgba(255,255,255,0.2)]" : 
+                                (steps.findIndex(x => x.id === step) > i ? "bg-emerald-500 border-emerald-500 text-white" : "bg-white/[0.03] border-white/10 text-white/20")
                               )}>
-                                {steps.findIndex(x => x.id === step) > i ? <CheckCircle2 className="w-4 h-4" /> : s.icon}
+                                {steps.findIndex(x => x.id === step) > i ? <CheckCircle2 className="w-3 h-3" /> : React.cloneElement(s.icon as any, {className: "w-3 h-3"})}
                               </div>
                               <p className={cn(
-                                "text-[12px] font-bold tracking-tight transition-colors duration-500",
-                                s.id === step ? "text-white" : "text-white/20"
+                                "text-[13px] font-medium transition-colors duration-500",
+                                s.id === step ? "text-white" : "text-white/40"
                               )}>
                                 {s.label}
                               </p>
@@ -259,8 +259,8 @@ export default function DemoPage() {
                         src={videoPreview} 
                         className={cn(
                           "w-full h-full object-cover transition-opacity duration-1000",
-                          step === "analyzing" || step === "aggregating" ? "grayscale opacity-20" : 
-                          step === "result" ? "opacity-100" : "opacity-60"
+                          step === "analyzing" || step === "aggregating" ? "grayscale opacity-30" : 
+                          step === "result" ? "opacity-100" : "opacity-80"
                         )} 
                         controls={step === "result"}
                       />
@@ -270,28 +270,29 @@ export default function DemoPage() {
               </AnimatePresence>
             </div>
             
-            <div className="pt-4 flex items-center justify-between border-t border-white/[0.05]">
-              <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-foreground/20">
-                <span className="flex items-center gap-1.5"><Shield className="w-3 h-3" /> Secure</span>
-                <span className="flex items-center gap-1.5"><Activity className="w-3 h-3" /> Real-time</span>
+            <div className="pt-6 flex items-center justify-between border-t border-white/10">
+              <div className="flex items-center gap-6 text-[11px] font-bold uppercase tracking-wider text-white/30">
+                <span className="flex items-center gap-2"><Shield className="w-4 h-4" /> Secure Pipeline</span>
+                <span className="flex items-center gap-2"><Activity className="w-4 h-4" /> Edge Compute</span>
               </div>
               {step === "result" && (
                 <button 
                   onClick={reset}
-                  className="px-6 py-2 glass rounded-xl text-[12px] font-bold hover:bg-white/10 hover:scale-[1.02] transition-all cursor-pointer"
+                  className="px-5 py-2 hover:bg-white/5 border border-transparent hover:border-white/10 rounded-lg text-[13px] font-medium transition-all cursor-pointer text-white/80 hover:text-white"
                 >
-                  New Analysis
+                  Start New Analysis
                 </button>
               )}
             </div>
           </div>
 
           {/* Vertical Divider */}
-          <div className="hidden lg:block w-px bg-white/[0.05]" />
-          <div className="block lg:hidden h-px w-full bg-white/[0.05]" />
+          <div className="hidden lg:block w-px bg-gradient-to-b from-transparent via-white/10 to-transparent relative z-20" />
+          <div className="block lg:hidden h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent relative z-20" />
 
-          {/* Right Column: Results & Telemetry */}
-          <div className="w-full lg:w-1/2 p-10 lg:p-14 min-h-[500px] flex flex-col justify-center bg-white/[0.01]">
+          {/* Right Column: Results & Telemetry (Output) */}
+          <div className="w-full lg:w-1/2 p-10 lg:p-14 min-h-[500px] flex flex-col justify-center relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] to-emerald-500/[0.02] pointer-events-none" />
             <AnimatePresence mode="wait">
               {step === "result" && result ? (
                 <motion.div
