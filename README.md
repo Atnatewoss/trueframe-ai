@@ -1,6 +1,8 @@
-# TrueFrame AI
+<h1 align="center">TrueFrame AI</h1>
 
-![TrueFrame AI Dashboard](./client/public/screenshot.png)
+<p align="center">
+  <img src="./client/public/screenshot.png" alt="TrueFrame AI Dashboard">
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch" />
