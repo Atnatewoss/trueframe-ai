@@ -1,4 +1,4 @@
-# TrueFrame AI 🔍🤖
+# TrueFrame AI
 
 ![TrueFrame AI Dashboard](./client/public/screenshot.png)
 
