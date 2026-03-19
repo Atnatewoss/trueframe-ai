@@ -1,15 +1,19 @@
 import os
 import sys
+import time
+import gc
 import torch
 from torch import nn, optim
+from torchvision.datasets import ImageFolder
 
 # Add project root to path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 from configs import settings
-from src.preprocessing.transforms import get_transforms
-from src.training.dataset import load_dataset, get_dataloaders
+from src.preprocessing.transforms import get_train_transforms, get_val_transforms
+from src.training.dataset import get_dataloaders, get_balanced_subset_indices, Subset
 from src.training.model import get_model
+from src.evaluation.evaluate_model import evaluate
 
 def train():
     # 0. Setup Logging
@@ -51,7 +55,6 @@ def train():
         log_and_print(f"Epoch {epoch+1}/{epochs}, Loss: {running_loss/len(train_loader):.4f}")
         
     # 3. Evaluation
-    from src.evaluation.evaluate_model import evaluate
     metrics = evaluate(model, test_loader, dataset.classes)
     
     # Log evaluation results
