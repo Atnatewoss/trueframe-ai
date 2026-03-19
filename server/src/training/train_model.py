@@ -16,6 +16,9 @@ from src.training.model import get_model
 from src.evaluation.evaluate_model import evaluate
 
 def train():
+    # Performance Optimization: Limit CPU threads to prevent contention
+    torch.set_num_threads(2)
+    
     # 0. Setup Logging
     log_dir = os.path.dirname(settings.LOG_FILE_PATH)
     os.makedirs(log_dir, exist_ok=True)
@@ -67,6 +70,7 @@ def train():
     log_and_print(f"Epochs: {epochs}")
     
     for epoch in range(epochs):
+        epoch_start_time = time.time()
         model.train()
         running_loss = 0.0
         
@@ -99,7 +103,11 @@ def train():
                     log_and_print(f"  Val Batch {batch_idx+1}/{len(val_loader)}")
         
         val_acc = 100 * val_correct / val_total
-        log_and_print(f"Epoch {epoch+1}/{epochs} Finished - Loss: {running_loss/len(train_loader):.4f}, Val Acc: {val_acc:.2f}%")
+        epoch_duration = time.time() - epoch_start_time
+        log_and_print(f"Epoch {epoch+1}/{epochs} Finished - Loss: {running_loss/len(train_loader):.4f}, Val Acc: {val_acc:.2f}%, Time: {epoch_duration:.2f}s")
+        
+        # Cleanup memory to prevent slowdown
+        gc.collect()
         
     # 3. Evaluation
     metrics = evaluate(model, test_loader, full_train_ds.classes)
