@@ -69,15 +69,37 @@ def train():
     for epoch in range(epochs):
         model.train()
         running_loss = 0.0
-        for images, labels in train_loader:
+        
+        log_and_print(f"\nEpoch {epoch+1} is starting training...")
+        for batch_idx, (images, labels) in enumerate(train_loader):
             optimizer.zero_grad()
             outputs = model(images)
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
+            
             running_loss += loss.item()
             
-        log_and_print(f"Epoch {epoch+1}/{epochs}, Loss: {running_loss/len(train_loader):.4f}")
+            if (batch_idx + 1) % 50 == 0:
+                log_and_print(f"  Train Batch {batch_idx+1}/{len(train_loader)}, Loss: {loss.item():.4f}")
+            
+        # Validation at end of epoch
+        log_and_print(f"Epoch {epoch+1} is starting validation...")
+        model.eval()
+        val_correct = 0
+        val_total = 0
+        with torch.no_grad():
+            for batch_idx, (images, labels) in enumerate(val_loader):
+                outputs = model(images)
+                _, predicted = torch.max(outputs.data, 1)
+                val_total += labels.size(0)
+                val_correct += (predicted == labels).int().sum().item()
+                
+                if (batch_idx + 1) % 50 == 0:
+                    log_and_print(f"  Val Batch {batch_idx+1}/{len(val_loader)}")
+        
+        val_acc = 100 * val_correct / val_total
+        log_and_print(f"Epoch {epoch+1}/{epochs} Finished - Loss: {running_loss/len(train_loader):.4f}, Val Acc: {val_acc:.2f}%")
         
     # 3. Evaluation
     metrics = evaluate(model, test_loader, full_train_ds.classes)
