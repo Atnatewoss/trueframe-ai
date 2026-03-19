@@ -26,25 +26,25 @@ def predict_video(video_path, model):
     Full inference pipeline: video -> frames -> CNN -> aggregation -> prediction
     """
     print(f"\n" + "="*50)
-    print(f"🎬 [Inference] Starting analysis for video: {video_path}")
+    print(f"[Inference] Starting analysis for video: {video_path}")
     print(f"="*50)
     
     # 1. Extract frames
     temp_frames_dir = "temp_inference_frames"
-    print(f"📸 [Inference] Extracting frames (sampling every 10th frame, max 100)...")
+    print(f"[Inference] Extracting frames (sampling every 10th frame, max 100)...")
     frames = extract_frames(video_path, temp_frames_dir, frame_skip=10, max_frames=100)
     
     if not frames:
-        print("❌ [Inference] No frames could be extracted. Aborting.")
+        print("[Inference] No frames could be extracted. Aborting.")
         return "error", 0.0, 0
         
-    print(f"✅ [Inference] Successfully extracted {len(frames)} frames.")
+    print(f"[Inference] Successfully extracted {len(frames)} frames.")
     
     # 2. Predict each frame
     transform = get_val_transforms()
     fake_probs = []
     
-    print(f"⚙️ [Inference] Injecting {len(frames)} frames into Deep Learning Engine...")
+    print(f"[Inference] Injecting {len(frames)} frames into Deep Learning Engine...")
     
     with torch.no_grad():
         for i, frame_path in enumerate(frames):
@@ -64,14 +64,14 @@ def predict_video(video_path, model):
     import shutil
     if os.path.exists(temp_frames_dir):
         shutil.rmtree(temp_frames_dir)
-        print("🧹 [Inference] Cleaned up temporary frames.")
+        print("[Inference] Cleaned up temporary frames.")
         
     # 4. Aggregation (Average Probability)
     if not fake_probs:
         return "unknown", 0.0, 0
         
     avg_fake_prob = sum(fake_probs) / len(fake_probs)
-    print(f"📊 [Inference] Aggregated Fake Probability: {avg_fake_prob * 100:.2f}%")
+    print(f"[Inference] Aggregated Fake Probability: {avg_fake_prob * 100:.2f}%")
     
     if avg_fake_prob >= 0.5:
         prediction = "fake"
@@ -80,7 +80,7 @@ def predict_video(video_path, model):
         prediction = "real"
         confidence = 1.0 - avg_fake_prob
         
-    print(f"🎯 [Inference] FINAL RESULT: {prediction.upper()} (Confidence: {confidence * 100:.1f}%)")
+    print(f"[Inference] FINAL RESULT: {prediction.upper()} (Confidence: {confidence * 100:.1f}%)")
     print("="*50 + "\n")
     
     return prediction, confidence, len(fake_probs)
