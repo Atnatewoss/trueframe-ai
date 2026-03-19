@@ -156,10 +156,10 @@ export default function DemoPage() {
       <Navbar />
 
       <main className="flex-1 pt-32 pb-12 px-6 max-w-7xl mx-auto w-full flex flex-col justify-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="w-full bg-[#050505] border border-white/[0.05] rounded-[48px] overflow-hidden flex flex-col lg:flex-row shadow-2xl">
           
           {/* Left Column: Interaction & Video */}
-          <div className="space-y-12">
+          <div className="w-full lg:w-1/2 p-10 lg:p-14 space-y-12">
             <SectionHeader 
               title="Forensic Diagnostic"
               subtitle="Deep learning engine optimized for detecting synthetic temporal patterns in high-fidelity media."
@@ -286,8 +286,12 @@ export default function DemoPage() {
             </div>
           </div>
 
+          {/* Vertical Divider */}
+          <div className="hidden lg:block w-px bg-white/[0.05]" />
+          <div className="block lg:hidden h-px w-full bg-white/[0.05]" />
+
           {/* Right Column: Results & Telemetry */}
-          <div className="min-h-[500px] flex flex-col justify-center">
+          <div className="w-full lg:w-1/2 p-10 lg:p-14 min-h-[500px] flex flex-col justify-center bg-white/[0.01]">
             <AnimatePresence mode="wait">
               {step === "result" && result ? (
                 <motion.div
@@ -296,17 +300,7 @@ export default function DemoPage() {
                   animate={{ opacity: 1, x: 0 }}
                   className="space-y-10 flex flex-col justify-center h-full"
                 >
-                  <div className="flex items-center gap-6">
-                    {result.prediction === "fake" ? (
-                      <div className="w-14 h-14 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
-                        <AlertCircle className="w-6 h-6 text-red-500" />
-                      </div>
-                    ) : (
-                      <div className="w-14 h-14 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
-                        <CheckCircle2 className="w-6 h-6 text-emerald-500" />
-                      </div>
-                    )}
-                    <div>
+                  <div className="flex flex-col gap-2">
                       <h3 className="text-3xl font-bold tracking-tight text-white mb-1">
                         {result.prediction === "fake" ? "Synthetic Detected" : "Authenticity Verified"}
                       </h3>
@@ -314,7 +308,6 @@ export default function DemoPage() {
                         {result.prediction === "fake" ? "Temporal and spatial anomalies found." : "No synthetic manipulation detected across frames."}
                       </p>
                     </div>
-                  </div>
 
                   <div className="grid grid-cols-2 gap-px bg-white/[0.08] rounded-[32px] overflow-hidden border border-white/[0.08]">
                     <div className="bg-[#050505] p-8 flex flex-col justify-center">
