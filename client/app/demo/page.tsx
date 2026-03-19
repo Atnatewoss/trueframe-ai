@@ -177,8 +177,8 @@ export default function DemoPage() {
           {/* Left Column: Interaction & Video (Input) */}
           <div className="w-full lg:w-1/2 p-10 lg:p-14 space-y-12 bg-[#050505] relative z-10">
             <SectionHeader 
-              title="Forensic Diagnostic"
-              subtitle="Deep learning engine optimized for detecting synthetic temporal patterns in high-fidelity media."
+              title="Deepfake Detection Analysis"
+              subtitle="An AI pipeline that uses a Convolutional Neural Network (CNN) to scan video frames for synthetic manipulation."
             />
 
             <div className="w-full">
@@ -227,8 +227,8 @@ export default function DemoPage() {
                           <Upload className="w-10 h-10" />
                         </div>
                         <div className="mt-4">
-                          <p className="font-medium text-lg text-white/80">Select Source Media</p>
-                          <p className="text-sm text-white/40 mt-1">Drag and drop a video file</p>
+                          <p className="font-medium text-lg text-white/80">Upload Video File</p>
+                          <p className="text-sm text-white/40 mt-1">Drag and drop a video to scan</p>
                         </div>
                       </>
                     )}
@@ -288,8 +288,8 @@ export default function DemoPage() {
             
             <div className="pt-6 flex items-center justify-between border-t border-white/10">
               <div className="flex items-center gap-6 text-[11px] font-bold uppercase tracking-wider text-white/30">
-                <span className="flex items-center gap-2"><Shield className="w-4 h-4" /> Secure Pipeline</span>
-                <span className="flex items-center gap-2"><Activity className="w-4 h-4" /> Edge Compute</span>
+                <span className="flex items-center gap-2"><Shield className="w-4 h-4" /> Secure Processing</span>
+                <span className="flex items-center gap-2"><Activity className="w-4 h-4" /> Real-time Analysis</span>
               </div>
               {step === "result" && (
                 <button 
@@ -362,9 +362,9 @@ export default function DemoPage() {
                     <Activity className="w-6 h-6" />
                   </div>
                   <div className="space-y-2">
-                    <p className="text-[12px] font-bold uppercase tracking-widest text-white/60">Forensic Telemetry</p>
+                    <p className="text-[12px] font-bold uppercase tracking-widest text-white/60">Analysis Results</p>
                     <p className="max-w-[200px] text-[11px] font-medium leading-relaxed italic">
-                      Diagnostic metrics will populate upon pipeline completion.
+                      Confidence scores and metrics will appear here once the video scan is complete.
                     </p>
                   </div>
                 </motion.div>
