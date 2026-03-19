@@ -1,5 +1,7 @@
 # TrueFrame AI 🔍🤖
 
+![TrueFrame AI Dashboard](./client/public/screenshot.png)
+
 TrueFrame AI is a comprehensive deepfake detection platform. It provides a robust machine learning pipeline for detecting manipulated videos using Convolutional Neural Networks (ResNet18) and a modern, user-friendly web interface.
 
 ## Table of Contents
