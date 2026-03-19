@@ -19,7 +19,6 @@ LOG_FILE_PATH = os.path.abspath(os.path.join(BASE_DIR, config['data']['log_path'
 BATCH_SIZE = config['training']['batch_size']
 EPOCHS = config['training']['epochs']
 LEARNING_RATE = config['training']['learning_rate']
-TRAIN_SPLIT = config['training']['train_split']
 
 # Image details
 IMG_SIZE = tuple(config['preprocessing']['img_size'])
