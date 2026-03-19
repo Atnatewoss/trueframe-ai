@@ -151,12 +151,28 @@ export default function DemoPage() {
     { id: "aggregating", label: "Majority vote aggregation...", icon: <Activity className="w-4 h-4" /> },
   ];
 
+  const handleExport = () => {
+    if (!result) return;
+    const reportStr = `TRUEFRAME AI - Forensic Telemetry Report\n\n` +
+      `Prediction: ${result.prediction.toUpperCase()}\n` +
+      `Confidence: ${result.confidence_info}\n` +
+      `Frames Scanned: ${result.frames_checked}\n` +
+      `Timestamp: ${new Date().toISOString()}`;
+    const blob = new Blob([reportStr], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "trueframe_analysis_report.txt";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="h-screen bg-black text-white font-sans antialiased selection:bg-blue-500/30 selection:text-white overflow-hidden flex flex-col">
       <Navbar />
 
-      <main className="flex-1 pt-32 pb-12 px-6 max-w-7xl mx-auto w-full flex flex-col justify-center">
-        <div className="w-full bg-[#0a0a0a] border border-white/10 rounded-[32px] overflow-hidden flex flex-col lg:flex-row shadow-2xl relative">
+      <main className="flex-1 pt-32 pb-12 px-6 max-w-7xl mx-auto w-full flex flex-col justify-center scale-90 origin-top">
+        <div className="w-full bg-[#0a0a0a] border border-white/10 rounded-none overflow-hidden flex flex-col lg:flex-row shadow-2xl relative">
           
           {/* Left Column: Interaction & Video (Input) */}
           <div className="w-full lg:w-1/2 p-10 lg:p-14 space-y-12 bg-[#050505] relative z-10">
@@ -177,7 +193,7 @@ export default function DemoPage() {
                     onDrop={handleDrop}
                     onClick={() => fileInputRef.current?.click()}
                     className={cn(
-                      "relative group cursor-pointer aspect-video rounded-[24px] border border-dashed transition-all flex flex-col items-center justify-center p-12 text-center overflow-hidden",
+                      "relative group cursor-pointer aspect-video rounded-none border border-dashed transition-all flex flex-col items-center justify-center p-12 text-center overflow-hidden",
                       error ? "border-red-500/30 bg-red-500/5" : "border-white/20 hover:border-white/40 bg-white/[0.02] hover:bg-white/[0.04]"
                     )}
                   >
@@ -200,7 +216,7 @@ export default function DemoPage() {
                         </div>
                         <button 
                           onClick={(e) => { e.stopPropagation(); runAnalysis(); }}
-                          className="mt-6 px-10 py-3 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 hover:scale-[1.02] transition-all text-[14px]"
+                          className="mt-6 px-10 py-3 bg-white text-black font-semibold rounded-none hover:bg-neutral-200 hover:scale-[1.02] transition-all text-[14px]"
                         >
                           Verify Authenticity
                         </button>
@@ -229,7 +245,7 @@ export default function DemoPage() {
                     key="preview"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="aspect-video rounded-[24px] overflow-hidden relative group border border-white/10 bg-black"
+                    className="aspect-video rounded-none overflow-hidden relative group border border-white/10 bg-black"
                   >
                     {step !== "result" && (
                       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/80 backdrop-blur-md px-8 text-center">
@@ -278,7 +294,7 @@ export default function DemoPage() {
               {step === "result" && (
                 <button 
                   onClick={reset}
-                  className="px-5 py-2 hover:bg-white/5 border border-transparent hover:border-white/10 rounded-lg text-[13px] font-medium transition-all cursor-pointer text-white/80 hover:text-white"
+                  className="px-6 py-2 bg-white text-black text-[12px] font-bold uppercase tracking-wider rounded-none hover:bg-neutral-200 transition-all cursor-pointer"
                 >
                   Start New Analysis
                 </button>
@@ -310,7 +326,7 @@ export default function DemoPage() {
                       </p>
                     </div>
 
-                  <div className="grid grid-cols-2 gap-px bg-white/[0.08] rounded-[32px] overflow-hidden border border-white/[0.08]">
+                  <div className="grid grid-cols-2 gap-px bg-white/[0.08] rounded-none overflow-hidden border border-white/[0.08]">
                     <div className="bg-[#050505] p-8 flex flex-col justify-center">
                       <p className="text-[11px] font-bold uppercase tracking-widest text-foreground/40 mb-2">Confidence</p>
                       <p className={cn(
@@ -328,7 +344,10 @@ export default function DemoPage() {
                     </div>
                   </div>
 
-                  <button className="w-full py-4 bg-white/[0.03] border border-white/[0.05] text-white font-medium rounded-[24px] hover:bg-white/[0.08] transition-colors text-sm">
+                  <button 
+                    onClick={handleExport}
+                    className="w-full py-4 bg-white/[0.03] border border-white/[0.05] text-white font-medium rounded-none hover:bg-white/[0.08] transition-colors text-sm cursor-pointer"
+                  >
                     Export Analysis Report
                   </button>
                 </motion.div>
