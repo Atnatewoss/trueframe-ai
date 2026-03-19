@@ -8,7 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from configs import settings
 from src.training.model import get_model
-from src.preprocessing.transforms import get_transforms
+from src.preprocessing.transforms import get_val_transforms
 from src.preprocessing.extract_frames import extract_frames
 
 def load_model():
@@ -33,7 +33,7 @@ def predict_video(video_path, model):
         return "error", 0.0, 0
     
     # 2. Predict each frame
-    transform = get_transforms()
+    transform = get_val_transforms()
     results = []
     
     with torch.no_grad():
