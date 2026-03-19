@@ -1,72 +1,76 @@
-# TrueFrame AI - Deepfake Detection System
+# TrueFrame AI 🔍🤖
 
-TrueFrame AI is a platform for detecting deepfake videos using Convolutional Neural Networks (ResNet18).
+TrueFrame AI is a comprehensive deepfake detection platform. It provides a robust machine learning pipeline for detecting manipulated videos using Convolutional Neural Networks (ResNet18) and a modern, user-friendly web interface.
 
-## Project Architecture
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+- [Development Workflow](#development-workflow)
 
-The project is divided into two main systems:
+## Project Overview
 
-### 1. ML Training Pipeline (`server/src/`)
-Handles everything from raw data to a trained model.
-- **Preprocessing**: Frame extraction and image normalization.
-- **Training**: Modular dataset loading and CNN training.
-- **Evaluation**: Performance bottleneck analysis (Accuracy, Precision, Recall, F1).
+With the rapid advancement of AI-generated media, distinguishing real videos from deepfakes has become a critical challenge. TrueFrame AI addresses this by combining an optimized PyTorch-based training pipeline with a Fast API backend and a responsive Next.js frontend.
 
-### 2. API (`server/app/`)
-A FastAPI service for real-world inference.
-- **Routes**: Clean endpoints for video prediction.
-- **Inference**: Orchestrates the transition from user video to final classification.
-- **Schemas**: Validated request/response formats.
+### Key Components
+1. **Machine Learning Server (`/server`)**: A PyTorch backend that handles dataset loading, model training, evaluation, and serves the classification model via FastAPI.
+2. **Web Client (`/client`)**: A modern React frontend built with Next.js and Tailwind CSS that allows users to seamlessly upload videos and visualize the model's confidence scores.
 
----
+## Repository Structure
 
-## Project Structure
+The project is structured as a monorepo containing both the frontend client and the backend server:
 
 ```text
-server/
-├── app/                  # Production API layer
-│   ├── main.py           # FastAPI entry point
-│   ├── routes.py         # API endpoints
-│   ├── inference.py      # Inference pipeline logic
-│   └── schemas.py        # Pydantic data models
-├── src/                  # ML Pipeline layer
-│   ├── preprocessing/    # Data preparation
-│   ├── training/         # Model training
-│   └── evaluation/       # Performance metrics
-├── configs/              # Centralized configuration
-│   └── training.yaml     # Hyperparameters & Paths
-├── data/                 # Training dataset (Real/Fake)
-├── models/               # Saved trained model weights
-└── logs/                 # Training session logs
+trueframe-ai/
+├── client/          # Next.js React frontend
+│   ├── app/         # App router (pages, layouts)
+│   ├── components/  # React components
+│   └── public/      # Static web assets
+│
+└── server/          # PyTorch & FastAPI backend
+    ├── app/         # FastAPI endpoints and schemas
+    ├── src/         # ML pipeline (training, dataset, evaluation)
+    ├── configs/     # Project configuration (hyperparameters)
+    └── data/        # Datasets (git-ignored)
 ```
 
----
+## Getting Started
 
-## How to Run
+To run the full TrueFrame AI platform locally, you will need to start both the server and the client.
 
-### Step 1: Install Dependencies
+### 1. Start the Server (Backend)
+
+The backend uses `uv` for lightning-fast Python dependency management.
+
 ```powershell
+# Navigate to the server folder
+cd server
+
+# Install dependencies
 uv sync
-```
 
-### Step 2: Prepare Dataset
-Place your images in `server/data/real/` and `server/data/fake/`.
-
-### Step 3: Train & Evaluate
-```powershell
-uv run src/training/train_model.py
-```
-
-### Step 4: Run the API
-```powershell
+# Run the FastAPI development server
 uv run fastapi dev app/main.py
 ```
+*The server will start on `http://127.0.0.1:8000`. Ensure this is running before interacting with the frontend.*
 
----
+### 2. Start the Client (Frontend)
 
-## Evaluation Results
-After training, the system will output metrics like:
-- **Accuracy**: 80%+
-- **F1 Score**: 0.79+
+The frontend uses standard Node.js package managers.
 
-These results are calculated on a 20% test split from your `data/` folder.
+```powershell
+# Navigate to the client folder (in a new terminal)
+cd client
+
+# Install dependencies
+npm install
+
+# Run the Next.js development server
+npm run dev
+```
+*The client will start on `http://localhost:3000`. Open this in your browser to use TrueFrame AI.*
+
+## Development Workflow
+
+- **Backend Development**: For details on the ML training loop, evaluating the ResNet model, or adding new API endpoints, refer to the [Server README](./server/README.md).
+- **Frontend Development**: For details on modifying the UI components or Tailwind styling, refer to the [Client README](./client/README.md).
