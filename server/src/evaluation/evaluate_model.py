@@ -11,7 +11,7 @@ def evaluate(model, test_loader, class_names):
     """
     Evaluates the model on the test dataset and prints metrics.
     """
-    print("\nEvaluating model on test dataset...")
+    print(f"\nEvaluating model on test dataset...")
     model.eval()
     all_preds = []
     all_labels = []
