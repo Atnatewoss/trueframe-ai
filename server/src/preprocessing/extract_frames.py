@@ -1,7 +1,7 @@
 import cv2
 import os
 
-def extract_frames(video_path, output_folder, frame_rate=1):
+def extract_frames(video_path, output_folder, frame_skip=10, max_frames=100):
     """
     Extracts frames from a video file and saves them to a folder.
     Used for both training dataset preparation and inference.
@@ -17,16 +17,17 @@ def extract_frames(video_path, output_folder, frame_rate=1):
     if fps == 0:
         return []
         
-    interval = int(fps / frame_rate) if frame_rate > 0 else 1
-    
     extracted_paths = []
     
     while success:
         success, image = vidcap.read()
-        if count % interval == 0 and success:
+        if success and count % frame_skip == 0:
             frame_path = os.path.join(output_folder, f"frame_{count}.jpg")
             cv2.imwrite(frame_path, image)
             extracted_paths.append(frame_path)
+            
+            if len(extracted_paths) >= max_frames:
+                break
         count += 1
         
     vidcap.release()

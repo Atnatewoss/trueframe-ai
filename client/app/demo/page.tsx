@@ -259,7 +259,8 @@ export default function DemoPage() {
                         src={videoPreview} 
                         className={cn(
                           "w-full h-full object-cover transition-opacity duration-1000",
-                          step === "analyzing" || step === "aggregating" ? "grayscale opacity-20" : "opacity-60"
+                          step === "analyzing" || step === "aggregating" ? "grayscale opacity-20" : 
+                          step === "result" ? "opacity-100" : "opacity-60"
                         )} 
                         controls={step === "result"}
                       />
@@ -311,8 +312,8 @@ export default function DemoPage() {
                       )}
                     </div>
 
-                    <h3 className="text-[28px] font-bold tracking-tight mb-2">
-                      {result.prediction === "fake" ? "Tampered Detected" : "Identity Verified"}
+                    <h3 className="text-[28px] font-bold tracking-tight mb-2 text-white">
+                      {result.prediction === "fake" ? "Synthetic Detected" : "Authenticity Verified"}
                     </h3>
                     <p className="text-[10px] text-foreground/30 font-bold uppercase tracking-[0.3em] mb-8 italic">Telemetry Build v1.0.4</p>
                     

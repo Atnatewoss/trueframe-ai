@@ -25,38 +25,62 @@ def predict_video(video_path, model):
     """
     Full inference pipeline: video -> frames -> CNN -> aggregation -> prediction
     """
+    print(f"\n" + "="*50)
+    print(f"🎬 [Inference] Starting analysis for video: {video_path}")
+    print(f"="*50)
+    
     # 1. Extract frames
     temp_frames_dir = "temp_inference_frames"
-    frames = extract_frames(video_path, temp_frames_dir, frame_rate=1)
+    print(f"📸 [Inference] Extracting frames (sampling every 10th frame, max 100)...")
+    frames = extract_frames(video_path, temp_frames_dir, frame_skip=10, max_frames=100)
     
     if not frames:
+        print("❌ [Inference] No frames could be extracted. Aborting.")
         return "error", 0.0, 0
+        
+    print(f"✅ [Inference] Successfully extracted {len(frames)} frames.")
     
     # 2. Predict each frame
     transform = get_val_transforms()
-    results = []
+    fake_probs = []
+    
+    print(f"⚙️ [Inference] Injecting {len(frames)} frames into Deep Learning Engine...")
     
     with torch.no_grad():
-        for frame_path in frames[:10]: # Check up to 10 frames
+        for i, frame_path in enumerate(frames):
             image = Image.open(frame_path).convert('RGB')
             image = transform(image).unsqueeze(0)
             outputs = model(image)
-            _, predicted = torch.max(outputs, 1)
-            results.append(predicted.item())
+            
+            # Use softmax to convert raw logits to probabilities
+            probs = torch.nn.functional.softmax(outputs, dim=1)
+            fake_prob = probs[0][0].item() # Assuming class 0 is 'fake'
+            fake_probs.append(fake_prob)
+            
+            if (i + 1) % 10 == 0 or (i + 1) == len(frames):
+                print(f"  -> Scanned {i + 1}/{len(frames)} frames...")
             
     # 3. Cleanup
     import shutil
     if os.path.exists(temp_frames_dir):
         shutil.rmtree(temp_frames_dir)
+        print("🧹 [Inference] Cleaned up temporary frames.")
         
-    # 4. Aggregation (Majority Vote)
-    if not results:
+    # 4. Aggregation (Average Probability)
+    if not fake_probs:
         return "unknown", 0.0, 0
         
-    # Classes: 0: fake, 1: real (based on defaults)
-    final_pred_idx = max(set(results), key=results.count)
-    class_names = ['fake', 'real']
+    avg_fake_prob = sum(fake_probs) / len(fake_probs)
+    print(f"📊 [Inference] Aggregated Fake Probability: {avg_fake_prob * 100:.2f}%")
     
-    confidence = results.count(final_pred_idx) / len(results)
+    if avg_fake_prob >= 0.5:
+        prediction = "fake"
+        confidence = avg_fake_prob
+    else:
+        prediction = "real"
+        confidence = 1.0 - avg_fake_prob
+        
+    print(f"🎯 [Inference] FINAL RESULT: {prediction.upper()} (Confidence: {confidence * 100:.1f}%)")
+    print("="*50 + "\n")
     
-    return class_names[final_pred_idx], confidence, len(results)
+    return prediction, confidence, len(fake_probs)
